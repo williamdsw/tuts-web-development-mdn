@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Basic Native Form Controls </title>
+    </head>
+    <body>
+
+        <form>
+            <!-- input types -->
+            <input type="text" name="comment" value="I'm a text field" autofocus>
+            <input type="text" value="Disabled" disabled>
+            <input type="password" name="password" value="">
+            <input type="password" value="myPassword" disabled>
+            <input type="hidden" name="timestamp" value="1286705410">
+            <input type="checkbox" name="carrots" value="carrots" checked>
+            <input type="checkbox" name="carrots" value="other">
+            <input type="checkbox" disabled checked>
+            <input type="checkbox" disabled>
+
+            <hr>
+
+            <fieldset>
+                <legend> Meal: </legend>
+                <div>
+                    <label for="radioSoup"> Soup </label>
+                    <input type="radio" id="radioSoup" name="meal" value="Soup" checked>
+                </div>
+                <div>
+                    <label for="radioCurry"> Curry </label>
+                    <input type="radio" id="radioCurry" name="meal" value="Curry">
+                </div>
+                <div>
+                    <label for="radioPizza"> Pizza </label>
+                    <input type="radio" id="radioPizza" name="meal" value="Pizza">
+                </div>
+                <div>
+                    <label for="radioBread"> Bread </label>
+                    <input type="radio" id="radioBread" name="meal" value="Bread" disabled>
+                </div>
+            </fieldset>
+
+            <hr>
+
+            <button type="submit"> Submit </button>
+            <button type="reset"> Reset </button>
+            <button type="button"> Button </button>
+            <button type="button" disabled="disabled"> Disabled </button>
+
+            <hr>
+
+            <input type="image" src="../../images/video.png" alt="Click me!" width="32" height="32">
+
+            <hr>
+
+            <!-- file related -->
+            <input type="file" name="file" accept="image/*" multiple> <br>
+            <input type="file" accept="image/*;capture=camera"> <br>
+            <input type="file" accept="video/*;capture=camcorder"> <br>
+            <input type="file" accept="audio/*;capture=microphone"> <br>
+        </form>
+
+        <hr>
+
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        
+    </body>
+</html>
