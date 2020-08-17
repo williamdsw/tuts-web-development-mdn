@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="../../css/forms/structure-web-form.css">
+        <title> How to structure a web form </title>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend> Fruit juice size </legend>
+                <div>
+                    <input type="radio" id="radioSmall" name="size" value="small">
+                    <label for="radioSmall"> Small </label>
+                </div>
+                <div>
+                    <input type="radio" id="radioMedium" name="size" value="medium">
+                    <label for="radioMedium"> Medium </label>
+                </div>
+                <div>
+                    <input type="radio" id="radioLarge" name="size" value="large">
+                    <label for="radioLarge"> Large </label>
+                </div>
+            </fieldset>
+        </form>
+
+        <hr>
+
+        <form>
+            <h1> Payment Form: </h1>
+            <p> Required fields are followed by <abbr title="required"> * </abbr></p>
+
+            <section>
+                <h2> Contact Information: </h2>
+
+                <fieldset>
+                    <legend> Title </legend>
+                    <ul>
+                        <li>
+                            <input type="radio" id="radioKing" name="title" value="King">
+                            <label for="radioKing"> King </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="radioQueen" name="title" value="Queen">
+                            <label for="radioQueen"> Queen </label>
+                        </li>
+                        <li>
+                            <input type="radio" id="radioJoker" name="title" value="Joker">
+                            <label for="radioJoker"> Joker </label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <p>
+                    <label for="inputName"> Name: <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="text" id="inputName" name="name" value="">
+                </p>
+                <p>
+                    <label for="inputEmail"> Email: <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="email" id="inputEmail" name="email" value="">
+                </p>
+                <p>
+                    <label for="inputPassword"> Password: <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="password" id="inputPassword" name="password" value="">
+                </p>
+            </section>
+
+            <section>
+                <h2> Payment Information: </h2>
+                <p>
+                    <label for="selectCardType"> Card Type: </label>
+                    <select id="selectCardType" name="cardType">
+                        <option value="Visa"> Visa </option>
+                        <option value="Mastercard"> Mastercard </option>
+                        <option value="American Express"> American Express </option>
+                    </select>
+                </p>
+                <p>
+                    <label for="inputCardNumber"> Card Number: <abbr title="required" aria-label="required"> * </abbr></label>
+                    <input type="tel" id="inputCardNumber" name="cardNumber" value="">
+                </p>
+                <p>
+                    <label for="inputExpirationDate"> 
+                        <span> Expiration Date: </span>  
+                        <abbr title="required" aria-label="required"> * </abbr>
+                        <em> formatted as mm/dd/yyyy </em>
+                    </label>
+                    <input type="date" id="inputExpirationDate" name="expirationDate" value="">
+                </p>
+                <p>
+                    <button type="submit"> Validate the payment </button>
+                </p>
+            </section>
+        </form>
+    </body>
+</html>
