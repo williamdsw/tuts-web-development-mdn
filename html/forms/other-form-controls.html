@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../../css/forms/other-forms-controls.css">
+
+        <title> Other Forms Controls </title>
+    </head>
+    <body>
+
+        <form action="">
+            <div>
+                <label> Textarea: </label> <br>
+                <textarea cols="30" rows="10" wrap="hard"></textarea>
+                <textarea cols="30" class="only-vertical" rows="10"> resize only vertical </textarea>
+                <textarea cols="30" class="only-horizontal" rows="10"> resize only horizontal </textarea>
+            </div>
+
+            <hr/>
+
+            <div>
+                <label> Select: </label> <br/>
+
+                <select name="rockGenres">
+                    <option value="Classic Rock"> Classic Rock </option>
+                    <option value="Pop Rock" selected> Pop Rock </option>
+                    <option value="Indie Rock"> Indie Rock </option>
+                </select>
+
+                <select name="metalGenres">
+                    <optgroup label="Melodic">
+                        <option value="Power Metal"> Power Metal </option>
+                        <option value="Folk Metal"> Folk Metal </option>
+                    </optgroup>
+                    <optgroup label="Extreme">
+                        <option value="Death Metal"> Death Metal </option>
+                        <option value="Black Metal"> Black Metal </option>
+                        <option value="Thrash Metal" selected> Thrash Metal </option>
+                    </optgroup>
+                    <optgroup label="Others">
+                        <option value="Progressive Metal"> Progressive Metal </option>
+                        <option value="Djent"> Djent </option>
+                        <option value="Speed Metal"> Speed Metal </option>
+                    </optgroup>
+                </select>
+
+                <select name="otherGenres" multiple size="5">
+                    <option value="New Wave"> New Wave </option>
+                    <option value="Pop"> Pop </option>
+                    <option value="Industrial Rock"> Industrial </option>
+                    <option value="Electronica"> Electronica </option>
+                    <option value="Blues"> Blues </option>
+                    <option value="Jazz"> Jazz </option>
+                </select>
+            </div>
+
+            <hr/>
+
+            <div>
+                <label> What's your favorite Metal band? </label>
+                <input type="text" name="band" list="bandSuggestion">
+
+                <datalist id="bandSuggestion">
+                    <label> Or pick a band </label>
+                    <select>
+                        <option value="Metallica"> Metallica </option>
+                        <option value="Megadeth"> Megadeth </option>
+                        <option value="Iron Maiden"> Iron Maiden </option>
+                        <option value="Helloween"> Helloween </option>
+                        <option value="Judas Priest"> Judas Priest </option>
+                        <option value="Korn"> Korn </option>
+                        <option value="Slipknot"> Slipknot </option>
+                        <option value="Fear Factory"> Fear Factory </option>'
+                    </select>
+                </datalist>
+            </div>
+
+            <hr/>
+
+            <div>
+                <label> Progress Bar: </label>
+                <button type="button" id="buttonResetProgress"> Reset </button>
+                <button type="button" id="buttonSimulateProgress"> Simulate </button>
+                <br/><br/>
+                <progress id="progressBar" value="75" max="100"></progress>
+                <output id="myOutput"></output>
+            </div>
+
+            <hr/>
+
+            <div>
+                <label> Meter: </label>
+                <button type="button" id="buttonResetMeter"> Reset </button>
+                <button type="button" id="buttonSimulateMeter"> Simulate </button>
+                <br/><br/>
+                <meter id="meter" min="0" max="100" value="75" low="30" high="70" optimum="50"> 75 </meter>
+                <output id="otherOutput"></output>
+            </div>
+
+        </form>
+
+        <script src="../../js/forms/other-form-controls.js"></script>
+        
+    </body>
+</html>

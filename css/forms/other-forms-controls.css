@@ -1,0 +1,11 @@
+
+.only-horizontal {
+    resize: horizontal;
+    background-color: cadetblue;
+    color: white;
+}
+
+.only-vertical {
+    resize: vertical;
+    background-color: darkkhaki;
+}
