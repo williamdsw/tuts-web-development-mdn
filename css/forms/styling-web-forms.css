@@ -1,0 +1,24 @@
+
+div.same-size button, 
+div.same-size input, 
+div.same-size select, 
+div.same-size textarea {
+    font-family: inherit;
+    font-size: 100%;
+    box-sizing: border-box;
+    width: 150px;
+    margin: 10px;
+    padding: 5px;
+}
+
+fieldset#customFieldset {
+    position: relative;
+}
+
+fieldset#customFieldset legend {
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: white;
+}
