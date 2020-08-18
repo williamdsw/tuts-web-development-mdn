@@ -1,0 +1,104 @@
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 20px auto;
+    max-width: 460px;
+}
+
+/* overall form */
+
+fieldset {
+    padding: 10px 30px 0;
+}
+
+fieldset > legend {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+}
+
+fieldset > div {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 20px;
+}
+
+button, label, input {
+    display: block;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    height: 30px;
+}
+
+input {
+    box-shadow: inset 1px 1px 3px #ccc;
+    border-radius: 5px;
+}
+
+input:hover, input:focus {
+    background-color: #eee;
+}
+
+input:required {
+    border: 1px solid black;
+}
+
+input:optional {
+    border: 1px solid silver;
+}
+
+/* generated content */
+
+input + span {
+    position: relative;
+}
+
+input:required + span::after {
+    font-size: 0.7rem;
+    position: absolute;
+    content: "required";
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    top: -26px;
+    left: -70px;
+}
+
+input + span::before {
+    position: absolute;
+    right: -20px;
+    top: -22px;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input:invalid + span::before {
+    content: '✖';
+    color: red;
+}
+
+input:valid + span::before {
+    content: '✓';
+    color: green;
+}
+
+button {
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* for date / month / week / time / datetime-local / number / range */
+input:out-of-range + span::after {
+    color: white;
+    background-color: red;
+    width: 155px;
+    left: -182px;
+    content: "Outside allowable value range";
+}

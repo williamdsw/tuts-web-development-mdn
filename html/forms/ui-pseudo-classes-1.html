@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/forms/ui-pseudo-classes-1.css">
+
+        <title> UI Pseudo Classes </title>
+    </head>
+    <body>
+        <form action="">
+            <fieldset>
+                <legend> Feedback Form </legend>
+                <div>
+                    <label for="inputFirstName"> * First Name: </label>
+                    <input type="text" id="inputFirstName" name="first_name" required>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="inputLastName"> * Last Name: </label>
+                    <input type="text" id="inputLastName" name="last_name" required>
+                    <span></span>
+                </div>
+                <div>
+                    <label for="inputEmail"> Email Address: </label>
+                    <input type="email" id="inputEmail" name="email">
+                </div>
+                <div>
+                    <label for="inputAge"> * Age (must be 12+): </label>
+                    <input type="number" id="inputAge" name="last_name" min="12" max="120" required>
+                    <span></span>
+                </div>
+                <div>
+                    <button type="submit"> Submit </button>
+                </div>
+                
+                <hr>
+
+                <p> Required fields are labelled with "required" </p>
+            </fieldset>
+        </form>
+    </body>
+</html>
