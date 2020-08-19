@@ -1,0 +1,34 @@
+form {
+    font: 1em sans-serif;
+    max-width: 320px;
+}
+
+
+form > div {
+    padding: 5px;
+    margin: 5px;
+}
+
+div > label {
+    display: block;
+}
+
+input[type="text"], input[type="email"], input[type="number"],
+textarea, fieldset {
+    width: 100%;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+
+input:invalid {
+    border: 2px dashed red;
+}
+
+input:invalid:required {
+    background-image: linear-gradient(to right, pink, lightgreen);
+}
+
+input:valid {
+    border: 1px solid black;
+}

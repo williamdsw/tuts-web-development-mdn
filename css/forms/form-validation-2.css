@@ -1,0 +1,62 @@
+form {
+    font: 1em sans-serif;
+    width: 500px;
+    padding: 0;
+    margin : 0 auto;
+}
+
+form > div {
+    padding: 5px;
+    margin: 5px;
+}
+
+div > label {
+    display: block;
+}
+
+input[type="text"], input[type="email"], input[type="number"],
+textarea, fieldset {
+    width: 100%;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+input#inputOtherEmail {
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    font-size: 90%;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #333;
+}
+
+input:invalid {
+    border-color: #900;
+    background-color: #FDD;
+}
+
+input:focus:invalid {
+    outline: none;
+}
+
+input:valid {
+    border: 1px solid black;
+}
+
+/* error span */
+
+span.error {
+    width: 100%;
+    padding: 0;
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 00 5px 5px;
+    box-sizing: border-box;
+}
+
+span.error.active {
+    padding: 0.3em;
+}
