@@ -1,0 +1,22 @@
+div { padding: 5px; margin: 5px; }
+
+input#inputFiles { display: none; }
+
+label[for="inputFiles"] {
+    display: inline-block;
+    background: linear-gradient(to bottom, rgb(147, 147, 255), rgb(164, 245, 248));
+    box-shadow: 1px 1px 3px black;
+    color: rgb(255, 0, 255);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+    margin: 0 5px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+label[for="inputFiles"]:hover, label[for="inputFiles"]:active {
+    background: linear-gradient(to bottom, rgb(147, 147, 255), rgb(34, 19, 90));
+}
