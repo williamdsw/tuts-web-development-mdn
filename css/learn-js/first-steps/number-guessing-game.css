@@ -1,0 +1,15 @@
+
+.guesses {
+    background-color: sandybrown;
+    font-style: italic;
+    font-weight: bold;
+    padding: 10px;
+    color: blueviolet;
+}
+
+.last-result {
+    font-weight: bold;
+}
+
+.success { color: green; }
+.fail { color: red; }
