@@ -1,0 +1,20 @@
+
+ul > li {
+    display: inline-block;
+    text-decoration: none;
+    width: fit-content;
+    min-width: 100px;
+    height: 32px;
+    background-color: mediumpurple;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+    border: 1px dotted lightseagreen;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+li.today {
+    background-color: turquoise;
+    color: steelblue;
+}
