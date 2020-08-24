@@ -1,0 +1,28 @@
+
+.message-box {
+    width: 242px;
+}
+
+.message-box.danger {
+    background-color: red;
+    color: white;
+}
+
+.message-box.chat {
+    background-color: aqua;
+    color: blueviolet;
+}
+
+.message-box p {
+    padding-left: 82px;
+    background-position: 25px center;
+    background-repeat: no-repeat;
+}
+
+.message-box.danger p {
+    background-image: url('../../../assets/images/warning.png');
+}
+
+.message-box.chat p {
+    background-image: url('../../../assets/images/chat.png');
+}
