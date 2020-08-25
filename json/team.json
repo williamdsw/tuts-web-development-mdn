@@ -1,0 +1,27 @@
+{
+    "name": "Bayern Munchen",
+    "country": "Germany", 
+    "stadium": "Allianz Arena",
+    "capacity": 75.000,
+    "founded": 1900,
+    "bestPlayers": [
+        {
+            "number": 1,
+            "position": "GK",
+            "nation": "GER",
+            "player": "Manuel Neuer"
+        },
+        {
+            "number": 9,
+            "position": "FW",
+            "nation": "POL",
+            "player": "Robert Lewandowski"
+        },
+        {
+            "number": 25,
+            "position": "FW",
+            "nation": "GER",
+            "player": "Thomas Muller"
+        }
+    ]
+}
