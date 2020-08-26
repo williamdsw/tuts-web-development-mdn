@@ -1,77 +1,172 @@
 
 // FIELDS
 
-let context = null;
-let width = null;
-let height = null;
+const canvas = document.querySelector('canvas');
+const context = canvas.getContext('2d');
+const width = canvas.width = window.innerWidth;
+const height = canvas.height = window.innerHeight;
+
 let balls = [];
+let evilCircle = null;
+let ballCount = 0;
+let paragraph = null;
 const NUMBER_OF_BALLS = 25;
 
 // CLASSES
 
-class Ball {
-    constructor(x, y, velocityX, velocityY, color, size) {
+class Shape {
+    constructor(x, y, velocityX, velocityY, exists) {
         this.position = { x, y };
         this.velocity = { x: velocityX, y: velocityY };
+        this.exists = exists;
+    }
+}
+
+/* function Ball (...) */
+
+class Ball extends Shape {
+
+    /* without EC2015 will need */
+    /* Shape.call(this, ...)/ */
+    /* Ball.prototype = Object.create (Shape.prototype); */
+    /* Object.defineProperty (Ball, 'constructor', {...}) */
+
+    constructor(x, y, velocityX, velocityY, exists, color, size) {
+        super(x, y, velocityX, velocityY,exists);
+
         this.color = color;
         this.size = size;
     }
-}
 
-Ball.prototype.draw = function () {
-    context.beginPath();
-    context.fillStyle = this.color;
-    context.arc(this.position.x, this.position.y, this.size, 0, 2 * Math.PI);
-    context.fill();
-}
-
-Ball.prototype.update = function() {
-    if ((this.position.x + this.size) >= width) {
-        this.velocity.x *= - 1;
+    /* Ball.prototype.draw = function () { ... } */
+    draw () {
+        context.beginPath();
+        context.fillStyle = this.color;
+        context.arc(this.position.x, this.position.y, this.size, 0, 2 * Math.PI);
+        context.fill();
     }
-
-    if ((this.position.x - this.size) <= 0) {
-        this.velocity.x *= -1;
+    
+    update () {
+        if ((this.position.x + this.size) >= width) {
+            this.velocity.x *= - 1;
+        }
+    
+        if ((this.position.x - this.size) <= 0) {
+            this.velocity.x *= -1;
+        }
+    
+        if ((this.position.y + this.size) >= height) {
+            this.velocity.y *= -1;
+        }
+    
+        if ((this.position.y - this.size) <= 0) {
+            this.velocity.y *= -1;
+        }
+    
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
     }
-
-    if ((this.position.y + this.size) >= height) {
-        this.velocity.y *= -1;
-    }
-
-    if ((this.position.y - this.size) <= 0) {
-        this.velocity.y *= -1;
-    }
-
-    this.position.x += this.velocity.x;
-    this.position.y += this.velocity.y;
-}
-
-Ball.prototype.collisionDetect = function () {
-    for (const ball of balls) {
-        if (!(this === ball)) {
-            const distanceX = (this.position.x - ball.position.x);
-            const distanceY = (this.position.y - ball.position.y);
-            const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
-
-            if (distance < (this.size + ball.size)) {
-                const r = random(0, 255);
-                const g = random(0, 255);
-                const b = random(0, 255);
-                const a = random(0.1, 1);
-                ball.color = this.color = `rgba(${r}, ${g}, ${b}, ${a})`;
+    
+    collisionDetect () {
+        for (const ball of balls) {
+            if (!(this === ball)) {
+                if (ball.exists) {
+                    const distanceX = (this.position.x - ball.position.x);
+                    const distanceY = (this.position.y - ball.position.y);
+                    const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+    
+                    if (distance < (this.size + ball.size)) {
+                        const r = random(0, 255);
+                        const g = random(0, 255);
+                        const b = random(0, 255);
+                        const a = random(0.1, 1);
+                        ball.color = this.color = `rgba(${r}, ${g}, ${b}, ${a})`;
+                    }
+                }
             }
         }
     }
-};
+}
+
+class EvilCircle extends Shape {
+    constructor(x, y, velocityX, velocityY, exists) {
+        super(x, y, velocityX, velocityY, exists);
+
+        this.color = 'white';
+        this.size = 10;
+    }
+
+    draw () {
+        context.beginPath();
+        context.strokeStyle = this.color;
+        context.lineWidth = 3;
+        context.arc(this.position.x, this.position.y, this.size, 0, 2 * Math.PI);
+        context.stroke();
+    }
+    
+    checkBounds () {
+        if ((this.position.x + this.size) >= width) {
+            this.position.x -= this.size;
+        }
+    
+        if ((this.position.x - this.size) <= 0) {
+            this.position.x += this.size;
+        }
+    
+        if ((this.position.y + this.size) >= height) {
+            this.position.y -= this.size;
+        }
+    
+        if ((this.position.y - this.size) <= 0) {
+            this.position.y += this.size;
+        }
+    }
+    
+    setControls () {
+        let _this = this;
+    
+        window.addEventListener('keydown', (ev) => {
+            if (ev.key !== null) {
+                switch(ev.key) {
+                    case 'a': { _this.position.x -= _this.velocity.x; break; }
+                    case 'd': { _this.position.x += _this.velocity.x; break; }
+                    case 'w': { _this.position.y -= _this.velocity.y; break; }
+                    case 's': { _this.position.y += _this.velocity.y; break; }
+                    default: { break; }
+                }
+            }
+        });
+        
+    };
+    
+    collisionDetect () {
+        for (const ball of balls) {
+            if (ball.exists) {
+                const distanceX = (this.position.x - ball.position.x);
+                const distanceY = (this.position.y - ball.position.y);
+                const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+    
+                if (distance < (this.size + ball.size)) {
+                    ball.exists = false;
+                    ballCount--;
+    
+                    if (paragraph !== null) {
+                        paragraph.textContent = `Ball Count: ${ballCount}`;
+                    }
+                }
+            }
+        }
+    }
+}
 
 // FUNCTIONS
 
 window.addEventListener('DOMContentLoaded', () => {
-    const canvas = document.querySelector('canvas');
-    context = canvas.getContext('2d');
 
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+    paragraph = document.querySelector('p');
+
+    evilCircle = new EvilCircle(100, 100, 20, 20, true);
+    evilCircle.setControls();
 
     generateBalls();
     loop();
@@ -94,8 +189,14 @@ function generateBalls () {
         const b = random(0, 255);
         const a = random(0.1, 1);
 
-        const ball = new Ball(x, y, velocityX, velocityY, `rgba(${r}, ${g}, ${b}, ${a})`, size);
+        const ball = new Ball(x, y, velocityX, velocityY, true, `rgba(${r}, ${g}, ${b}, ${a})`, size);
+        //console.log('ball', ball);
         balls.push(ball);
+        ballCount++;
+    }
+
+    if (paragraph !== null) {
+        paragraph.textContent = `Ball Count: ${ballCount}`;
     }
 }
 
@@ -104,9 +205,17 @@ function loop() {
     context.fillRect(0, 0, width, height);
 
     for (const ball of balls) {
-        ball.draw();
-        ball.update();
-        ball.collisionDetect();
+        if (ball.exists) {
+            ball.draw();
+            ball.update();
+            ball.collisionDetect();
+        }
+    }
+
+    if (evilCircle !== null) {
+        evilCircle.draw();
+        evilCircle.checkBounds();
+        evilCircle.collisionDetect();
     }
 
     requestAnimationFrame(loop);
