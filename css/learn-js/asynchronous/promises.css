@@ -1,0 +1,11 @@
+
+img {
+    display: block;
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 300px;
+    max-height: 300px;
+    margin: 5px;
+    padding: 3px;
+    border: 1px dotted rgba(0, 0, 0, 0.3);
+}
