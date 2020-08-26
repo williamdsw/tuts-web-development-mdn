@@ -1,5 +1,8 @@
 # tuts-js-mdn
 
-# todo - forms
-# todo - learn js
-# todo - objects
+# forms - done
+# learn js
+## first-steps - done
+## building-blocks - done
+## objects - done
+## asynchronous - todo
