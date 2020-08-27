@@ -5,4 +5,5 @@
 ## first-steps - done
 ## building-blocks - done
 ## objects - done
-## asynchronous - todo
+## asynchronous - done
+## client-side web APIs - todo
