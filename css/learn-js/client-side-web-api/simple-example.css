@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+}
+
+.highlight {
+    color: sandybrown;
+    background-color: seagreen;
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+}
+
+div.tile {
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    background-image: url('../../../assets/images/bgtile.png');
+    border: 10px solid white;
+}
