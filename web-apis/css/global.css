@@ -11,7 +11,7 @@ div {
     width: 100%;
 }
 
-h3 {
+h2, h3 {
     text-align: center;
 }
 
@@ -61,4 +61,10 @@ div.message > p {
 
 #containerReceived {
     display: none;
+}
+
+video {
+    display: block;
+    margin: 1rem auto;
+    border: 3px dotted white;
 }
