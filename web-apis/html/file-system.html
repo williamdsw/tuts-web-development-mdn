@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/file-system.css">
+        <title> File System </title>
+    </head>
+    <body>
+
+        <section>
+            <div id="pageWrapper" class="clearfix">
+                <header>
+                    <h1> HTML5 Text Editor </h1>
+                    <h4> Powered by the FileSystem APIs. </h4>
+                </header>
+
+                <main>
+                    <form id="formFile" action="#" method="POST">
+                        <div class="field">
+                            <input type="text" id="inputFileName" name="fileName" placeholder="Filename (e.g. treehouse.txt)">
+                        </div>
+                        <div class="field">
+                            <textarea id="textAreaContent" name="content" placeholder="Type your content here..."></textarea>
+                        </div>
+                        <div class="field">
+                            <button type="submit"> Save File </button>
+                            <div id="messageBox"></div>
+                        </div>
+                    </form>
+                </main>
+
+                <aside>
+                    <div id="files">
+                        <header>
+                            <h2> File Browser </h2>
+                        </header>
+                        <ul id="listFiles"></ul>
+                        <div> Based on <a href="https://blog.teamtreehouse.com/building-an-html5-text-editor-with-the-filesystem-apis"> this article. </a></div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+        
+        <script src="../js/file-system.js"></script>
+    </body>
+</html>
