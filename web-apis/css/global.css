@@ -68,3 +68,11 @@ video {
     margin: 1rem auto;
     border: 3px dotted white;
 }
+
+a#mapLink {
+    color: tan;
+}
+
+a#mapLink:visited {
+    color: lightyellow;
+}
