@@ -76,3 +76,12 @@ a#mapLink {
 a#mapLink:visited {
     color: lightyellow;
 }
+
+table thead {
+    font-weight: bolder;
+}
+
+table td {
+    padding: 1rem;
+    border: 1px dashed goldenrod;
+}
