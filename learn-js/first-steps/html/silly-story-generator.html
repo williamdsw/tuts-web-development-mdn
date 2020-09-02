@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/silly-story-generator.css">
+        <title> Silly Store Generator </title>
+    </head>
+    <body>
+        <div>
+            <label for="inputCustomName"> Enter Custom Name: </label>
+            <input type="text" id="inputCustomName" placeholder="Bob">
+        </div>
+        <div>
+            <label for="inputRadioUS"> US </label>
+            <input type="radio" id="inputRadioUS" name="country" value="US" checked>
+
+            <label for="inputRadioUK"> UK </label>
+            <input type="radio" id="inputRadioUK" name="country" value="UK">
+        </div>
+        <div>
+            <button class="randomize"> Generate random story </button>
+        </div>
+
+        <p class="story"></p>
+
+        <script src="../js/silly-story-generator.js"></script>
+    </body>
+</html>
