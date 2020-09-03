@@ -6,4 +6,6 @@
 ## building-blocks - done
 ## objects - done
 ## asynchronous - done
-## client-side web APIs - todo
+## client-side web APIs - done
+# html structuring the web - done
+# multimedia and embedding - todo
