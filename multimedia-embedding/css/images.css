@@ -1,0 +1,9 @@
+
+.dinosaur {
+    width: 400px;
+    height: 341px;
+}
+
+#backgroundDinossaur {
+    background-image: url('../assets/images/dinosaur.jpg');
+}
