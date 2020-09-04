@@ -1,0 +1,11 @@
+
+iframe {
+    width: 50%;
+    height: 20rem;
+    border: 1px dotted black;
+}
+
+.my-pdf {
+    width: 800px;
+    height: 1200px;
+}
