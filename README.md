@@ -8,4 +8,5 @@
 ## asynchronous - done
 ## client-side web APIs - done
 # html structuring the web - done
-# multimedia and embedding - todo
+# multimedia and embedding - done
+# html tables
