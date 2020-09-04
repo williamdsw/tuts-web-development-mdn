@@ -1,0 +1,39 @@
+
+h2 { /* by element tag name */
+    color: red;
+}
+
+p {
+    color: green;
+}
+
+li {
+    list-style-type: none;
+}
+
+li.special, span.special { /* by class */
+    color: orange;
+    font-weight: bold;
+}
+
+li em { /* by child location */
+    color: rebeccapurple;
+}
+
+h2 + p { /* 2nd element after 1st element */
+    font-size: 200%;
+}
+
+/* based on state */
+
+a:link {
+    color: pink;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    text-decoration: none;
+}
