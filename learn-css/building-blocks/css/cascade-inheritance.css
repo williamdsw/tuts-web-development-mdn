@@ -1,0 +1,51 @@
+
+body {
+    color: blue;
+}
+
+span {
+    color: black;
+}
+
+.main {
+    color: rebeccapurple;
+    border: 2px solid #ccc;
+    padding: 1rem;
+}
+
+.special {
+    color: black;
+    font-weight: bold;
+}
+
+p.other {
+    color: red;
+    font-weight: bold;
+}
+
+a.link {
+    color: inherit;
+}
+
+blockquote {
+    background-color: red;
+    color: white;
+    border: 2px solid green;
+    padding: 10px 15px;
+}
+
+blockquote.fix-this {
+    all: unset;
+}
+
+.better {
+    background-color: gray;
+    color: white;
+    border: none !important;
+    padding: 5px;
+}
+
+#winning {
+    background-color: red;
+    border: 1px solid black;
+}
