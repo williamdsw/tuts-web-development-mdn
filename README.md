@@ -10,7 +10,8 @@
 ## html tables - done
 
 # learn css
-## fist steps - todo
+## fist steps - done
+## building blocks - done
 
 # learn js
 ## first-steps - done
