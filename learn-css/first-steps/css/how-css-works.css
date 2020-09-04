@@ -1,0 +1,17 @@
+
+p span {
+    border: 1px solid black;
+    background-color: lime;
+}
+
+p.special {
+    font-weight: bold;
+    color: blue;
+    font-size: 200%;
+}
+
+div.box {
+    height: 500px;
+    width: calc(100% - 50px);
+    background-color: burlywood;
+}
