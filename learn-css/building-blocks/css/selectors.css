@@ -64,3 +64,61 @@ div[class$="-box"] { /* class ends with 'box' */
 div[class*="blue" i] { /* class contains 'blue' with case insensitivity */
     background-color: deepskyblue;
 }
+
+/* ------ Pseudo-classes and pseudo-elements ------ */
+
+/* pseudo-classes = :pseudo-class */
+
+article p:first-child { /* first-child (p) of article */
+    font-size: 120%;
+    font-weight: bold;
+}
+
+article p:last-child { /* last-child (p) of article */
+    font-size: 80%;
+    font-weight: lighter;
+}
+
+article p:hover { /* when mouse is over */
+    background-color: deepskyblue;
+}
+
+article p:active { /* when element is clicked (clicking) */
+    background-color: firebrick;
+    color: white;
+}
+
+/* pseudo-elements = ::pseudo-element-name */
+
+article p::first-line {
+    border-bottom: 1px dotted rgba(0, 0, 0, 1);
+}
+
+article p::first-letter {
+    text-transform: uppercase;
+    font-size: 200%;
+    color: blue;
+}
+
+/* combining both */
+
+article p:first-child::selection {
+    background-color: green;
+    color: gold;
+    font-style: italic;
+}
+
+.custom-div {
+    width: 50%;
+    height: 32px;
+    background-color: indigo;
+    color: lightblue;
+}
+
+.custom-div::before {
+    content: "Some content Before!";
+}
+
+.custom-div::after {
+    content: "Some content after!";
+}
