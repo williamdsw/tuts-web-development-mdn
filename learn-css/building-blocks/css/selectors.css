@@ -122,3 +122,23 @@ article p:first-child::selection {
 .custom-div::after {
     content: "Some content after!";
 }
+
+/* ------ Combinators ------ */
+
+body section p { /* descendant */
+    border: 1px solid black;
+}
+
+section > span { /* child */
+    border-top: 1px dashed forestgreen;
+    font-weight: bold;
+}
+
+section + p { /* adjacent sibling */
+    border: 2px groove red;
+    text-align: center;
+}
+
+section ~ p { /* anywhere sibling */
+    font-style: italic;
+}
