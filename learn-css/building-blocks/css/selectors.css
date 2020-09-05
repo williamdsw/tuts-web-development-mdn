@@ -1,0 +1,34 @@
+
+* { /* universal selector */
+    margin: 0;
+}
+
+p { /* by tag / type */
+    background-color: #e9e9e9;
+}
+
+.special { /* by class */
+    background-color: lawngreen;
+    font-style: italic;
+    padding: 3px;
+}
+
+#myStrong { /* by Id */
+    font-weight: bold;
+    margin: 0 3px;
+}
+
+.notebook {
+    border: 4px solid #666;
+    padding: 0.5rem;
+}
+
+.notebook.warning { /* multiple classes */
+    border-color: orange;
+    font-weight: bold;
+}
+
+.notebook.danger { 
+    border-color: red;
+    font-weight: bolder;
+}
