@@ -1,0 +1,17 @@
+
+.vertical-rl {
+    display: inline-block;
+    writing-mode: vertical-rl;
+}
+
+.horizontal-tb {
+    writing-mode: horizontal-tb;
+}
+
+.sideways-lr {
+    writing-mode: sideways-lr;
+}
+
+.sideways-rl {
+    writing-mode: sideways-rl;
+}
