@@ -1,0 +1,15 @@
+
+img {
+    border: 2px solid blue;
+}
+
+.only-border {
+    border: 5px solid red;
+}
+
+.defined-div {
+    width: 200px;
+    min-height: 150px;
+    max-width: 250px;
+    border: 2px dotted rgba(0, 0, 0, 0.5);
+}
