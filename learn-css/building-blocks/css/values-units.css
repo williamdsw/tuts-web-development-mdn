@@ -1,0 +1,159 @@
+
+div {
+    margin: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: firebrick;
+    color: white;
+}
+
+/* ----- Absolute Units ----- */
+
+/* 1cm = 96px / 2.54 */
+.centimeters {
+    width: 1cm;
+    height: 1cm;
+}
+
+/* 1mm = 1/10th of 1cm */
+.millimeters {
+    width: 10mm;
+    height: 10mm;
+}
+
+/* 1Q = 1/40th of 1cm */
+.quarters-millimeters {
+    width: 100Q;
+    height: 100Q;
+}
+
+/* 1in = 2.54cm = 96px */
+.inches {
+    width: 1in;
+    height: 1in;
+}
+
+/* 1pc = 1/6th of 1in */
+.picas {
+    width: 3pc;
+    height: 3pc;
+}
+
+/* 1pt = 1/72th of 1in */
+.points {
+    width: 100pt;
+    height: 100pt;
+}
+
+/* 1px = 1/96th of 1in */
+.inches {
+    width: 100px;
+    height: 100px;
+}
+
+/* ----- Relative Units ----- */
+
+/* Font size of the parent, 
+   in the case of typographical properties like font-size, 
+   and font size of the element itself, 
+   in the case of other properties like width. 
+*/
+.em {
+    width: 3em;
+    height: 3em;
+}
+
+/* x-height of the element's font. */
+.ex {
+    width: 5ex;
+    height: 5ex;
+}
+
+/* The advance measure (width) of the glyph "0" of the element's font. */
+.ch {
+    width: 5ch;
+    height: 5ch;
+}
+
+/* Font size of the root element. */
+.rem {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Line height of the element. */
+.lh {
+    width: 1lh;
+    height: 1lh;
+}
+
+/* 1% of the viewport's width. */
+.vw {
+    width: 3vw;
+    height: 3vw;
+}
+
+/* 1% of the viewport's height. */
+.vh {
+    width: 5vh;
+    height: 5vh;
+}
+
+/* 1% of the viewport's smaller dimension. */
+.vmin {
+    width: 10vmin;
+    height: 10vmin;
+}
+
+/* 1% of the viewport's larger dimension. */
+.vmax {
+    width: 10vmax;
+    height: 10vmax;
+}
+
+.percent {
+    width: 10%;
+    height: 10%;
+}
+
+/* colors */
+
+.pill-container {
+    width: 100%;
+    background-image: url('../assets/images/star.png');
+    background-color: blue;
+}
+
+.pill {
+    width: 400px;
+    height: 50px;
+    padding: 10px 1px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 150%;
+}
+
+.one {
+    background-color: #02798b;
+}
+
+.two {
+    background-color: rgb(197, 93, 161);
+}
+
+.three {
+    background-color: rgba(18, 138, 125, 0.8);
+}
+
+.four {
+    background-color: hsl(145, 99%, 28%);
+}
+
+.five {
+    background-color: hsla(19, 82%, 49%, 0.534);
+}
+
+.calculated {
+    width: calc(20% + 100px);
+}
