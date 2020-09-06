@@ -1,0 +1,52 @@
+
+/* images */
+
+.box {
+    width: 200px;
+    border: 3px solid blue;
+    margin: 10px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+img.object-fit-contain { object-fit: contain; }
+img.object-fit-cover { object-fit: cover; }
+img.object-fit-fill { object-fit: fill; }
+img.object-fit-scale-down { object-fit: scale-down; }
+
+/* form */
+
+input, button, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+input, textarea {
+    border: 2px solid #000;
+    margin: 0 0 1em 0;
+    padding: 10px;
+    width: 100%;
+}
+
+button {
+    border: 3px solid #333;
+    background-color: #999;
+    border-radius: 5px;
+    padding: 10px 2em;
+    font-weight: bold;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+textarea {
+    overflow: auto;
+}
