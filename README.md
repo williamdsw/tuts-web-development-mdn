@@ -12,6 +12,7 @@
 # learn css
 ## fist steps - done
 ## building blocks - done
+## styling text - todo
 
 # learn js
 ## first-steps - done
