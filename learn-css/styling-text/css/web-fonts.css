@@ -1,0 +1,15 @@
+
+@font-face {
+    font-family: 'sega';
+    src: url('../assets/fonts/sega-webfont.woff2') format('woff2'),
+         url('../assets/fonts/sega-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.sega {
+    font-family: 'sega';
+    font-size: 5rem;
+    color: blue;
+    text-shadow: 3px 3px 5px cornflowerblue;
+}
