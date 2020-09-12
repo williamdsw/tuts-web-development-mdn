@@ -1,0 +1,149 @@
+
+p:first-child {
+    font-family: Arial;
+    color: red;
+}
+
+.arial {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.courier-new {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.georgia {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: lighter;
+}
+
+.times-new-roman {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+.trebuchet-ms {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+}
+
+.verdana {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+
+.cursive {
+    font-family: cursive;
+    font-weight: 900;
+}
+
+.fantasy {
+    font-family: fantasy;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.full-width {
+    text-transform: full-width;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.overline {
+    text-decoration: overline;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.text-shadow {
+    text-shadow: 4px 4px 5px red;
+}
+
+.multiple-text-shadow {
+    text-shadow: 1px 1px 1px yellow, 2px 2px 2px green, 3px 3px 3px blue;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.line-height {
+    line-height: 1.6;
+}
+
+.letter-spacing {
+    letter-spacing: 4px;
+}
+
+.word-spacing {
+    word-spacing: 4px;
+}
+
+.font-feature-settings {
+    font-feature-settings: "vert";
+}
+
+.font-variant {
+    font-variant: small-caps;
+    font-variant-alternates: historical-forms;
+    /*font-variant-caps: titling-caps;*/
+    font-variant-east-asian: traditional;
+    font-variant-ligatures: no-contextual;
+    font-variant-numeric: slashed-zero;
+}
+
+.other-font {
+    font-size-adjust: 0.25;
+    font-stretch: ultra-condensed;
+    text-decoration-line: underline;
+    text-underline-position: auto;
+    text-rendering: optimizeSpeed;
+}
+
+.other-text {
+    padding: 0.5rem;
+    background-color: greenyellow;
+    max-width: 50%;
+    text-indent: 1rem;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    direction: rtl;
+    text-align-last: left;
+    text-orientation: sideways;
+    overflow-wrap: break-word;
+}
