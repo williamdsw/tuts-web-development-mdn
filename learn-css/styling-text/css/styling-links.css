@@ -1,0 +1,21 @@
+
+a {
+    font-size: 150%;
+    outline: 0;
+    border-bottom-style: double;
+}
+
+a.github:link {
+    font-weight: bold;
+}
+
+a.github:visited {
+    font-weight: lighter;
+    font-style: italic;
+    color: indigo;
+}
+
+a.github:hover, a.github:focus, a.github:active {
+    color: lightskyblue;
+}
+
