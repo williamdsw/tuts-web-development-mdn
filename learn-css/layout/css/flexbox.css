@@ -1,0 +1,49 @@
+
+/* || Global */
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+/* || Headers */
+
+header {
+    background: purple;
+    height: 100px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    line-height: 100px;
+    margin: 0;
+}
+
+/* || Other */
+
+article {
+    background: aqua;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* || Flexbox style */
+
+section {
+    display: flex;
+    flex-direction: row; /* row = default; others: column, column-reverse, row-reverse */
+    flex-wrap: wrap;
+    /* flex-flow: row wrap; --shortcut */
+}
+
+article {
+    flex: 1 200px;
+}
+
+article:nth-child(2) {
+    flex: 2 450px;
+}

@@ -1,0 +1,33 @@
+
+/* || Global */
+
+html {
+    font-family: sans-serif;
+}
+
+/* || Other */
+
+button {
+    background: linear-gradient(to bottom, #ccc, #fff);
+    border: 1px solid #ccc;
+    width: 100px;
+    height: 30px;
+}
+
+/* || Flexbox style */
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: brown;
+    height: 10rem;
+}
+
+button:first-child {
+    align-self: flex-end;
+}
+
+button:nth-child(2) {
+    order: -1;
+}
