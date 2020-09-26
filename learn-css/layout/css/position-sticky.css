@@ -1,0 +1,18 @@
+article {
+    background: linear-gradient(to bottom, yellow, orange);
+    padding: 10px;
+}
+
+p {
+    padding: 1rem;
+    background-color: aquamarine;
+    border: 1px solid blue;
+}
+
+.sticky {
+    background-color: brown;
+    color: white;
+    position: sticky;
+    top: 25%;
+    left: 50%;
+}

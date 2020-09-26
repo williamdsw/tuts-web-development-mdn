@@ -1,0 +1,19 @@
+article {
+    background: linear-gradient(to bottom, yellow, orange);
+    padding: 10px;
+}
+
+p {
+    padding: 1rem;
+    background-color: aquamarine;
+    border: 1px solid blue;
+}
+
+.absolute {
+    background-color: brown;
+    color: white;
+    position: absolute;
+    bottom: 15px;
+    right: 50px;
+    z-index: 1;
+}
