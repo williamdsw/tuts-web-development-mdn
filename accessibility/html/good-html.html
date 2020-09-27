@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Semantic HTML </title>
+    </head>
+    <body>
+        <header>
+            <h1> Semantic HTML </h1>
+        </header>
+
+        <nav></nav>
+
+        <main>
+            <article>
+                <section>
+                    <header>
+                        <h2> My heading </h2>
+                    </header>
+    
+                    <p> This is the first section of my document. </p>
+    
+                    <p> I'll add another paragraph here too. </p>
+    
+                    <ol>
+                        <li> Here is </li>
+                        <li> a list for </li>
+                        <li> you to read </li>
+                    </ol>
+                </section>
+                <section>
+                    <header>
+                        <h3> My subheading </h3>
+                    </header>
+
+                    <p> 
+                        This is the first subsection of my document. 
+                        I'd love people to be able to find this content!
+                    </p>
+                </section>
+                <section>
+                    <header>
+                        <h3> My 2nd subheading </h3>
+                    </header>
+
+                    <p> 
+                        This is the second subsection of my content. 
+                        I think is more interesting than the last one.
+                    </p>
+                </section>
+            </article>
+
+            <aside>
+                <header>
+                    <h4> My Form! </h4>
+                </header>
+                <form action="">
+                    <div>
+                        <label for="nameInput"> Fill in your name: </label>
+                        <input type="text" id="nameInput" name="name">
+                    </div>
+                </form>
+            </aside>
+
+            <aside>
+                <figure>
+                    <img src="../../assets/images/coffee.jpg" 
+                         alt="A cup of coffee!" 
+                         aria-labelledby="coffeeLabel" />
+                    <figcaption> A cup of coffee! </figcaption>
+                </figure>
+                
+                <!-- <p id="coffeeLabel"> A cup of coffee! </p> -->
+            </aside>
+
+            <aside>
+                <a href="https://www.wikipedia.org/" target="_blank" rel="noopener noreferrer">
+                    Wikipedia (opens in a new window)
+                </a>
+            </aside>
+        </main>
+
+        <footer></footer>
+    </body>
+</html>
