@@ -1,0 +1,57 @@
+
+.available {
+    display: none;
+}
+
+/* @media media-type and (media-feature-rule) {} */
+
+@media screen and (max-width: 600px) {
+    body {
+        color: red;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        color: blue;
+    }
+}
+
+
+@media (orientation: landscape) {
+    body {
+        font-weight: bold;
+    }
+}
+
+@media (orientation: portrait) {
+    body {
+        font-style: italic;
+    }
+}
+
+@media (hover: hover) {
+    body {
+        color: blueviolet;
+    }
+}
+
+@media screen and (min-width: 600px) and (orientation: landscape) {
+    .available {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 600px), screen and (orientation: landscape) {
+    body {
+        background: linear-gradient(to bottom, #ccc, #fff);
+        background-repeat: no-repeat;
+    }
+}
+
+@media not all and (orientation: landscape) {
+    body {
+        background: linear-gradient(to bottom, black, grey);
+        background-repeat: no-repeat;
+    }
+}
