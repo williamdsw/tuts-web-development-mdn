@@ -13,7 +13,7 @@
 ## fist steps - done
 ## building blocks - done
 ## styling text - done
-## layout -- todo
+## layout -- done
 
 # learn js
 ## first-steps - done
@@ -22,3 +22,4 @@
 ## asynchronous - done
 ## client-side web APIs - done
 
+# accessibility - todo
