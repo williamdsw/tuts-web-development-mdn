@@ -7,40 +7,73 @@
         <title> Video and audio content </title>
     </head>
     <body>
-        <h1> Video and audio content </h1>
+        <header>
+            <h1> Video and audio content </h1>
+        </header>
+        
         <hr>
 
-        <h2> Video </h2>
-        <video src="../../../assets/videos/rabbit.webm" controls>
-
-            <!-- fallback -->
-            <p> Your browser doesn't support HTML5 video. Here is a <a href="../../../assets/videos/rabbit.webm"> link to the video </a></p>
-        </video>
-
-        <h2> Video with Sources </h2>
-        <video class="my-video" preload="auto" poster="../assets/images/dinosaur.jpg" 
-               controls autoplay loop muted >
-            <source type="video/mp4" src="../../../assets/videos/rabbit.mp4"/>
-            <source type="video/webm" src="../../../assets/videos/rabbit.webm"/>
-
-            <!-- fallback -->
-            <p> Your browser doesn't support HTML5 video. Here is a <a href="../../../assets/videos/rabbit.webm"> link to the video </a></p>
-        </video>
-
-        <h2> Audio with Sources </h2>
-        <audio controls>
-            <source type="audio/mp3" src="../../../assets/audios/viper.mp3"/>
-            <source type="audio/ogg" src="../../../assets/audios/viper.ogg"/>
-
-            <!-- fallback -->
-            <p> Your browser doesn't support HTML5 audio. Here is a <a href="../../../assets/audios/viper.mp3"> link to the audio </a></p>
-        </audio>
-
-        <h2> Video with Subtitles </h2>
-        <video controls>
-            <source type="video/mp4" src="../../../assets/videos/rabbit.mp4"/>
-            <source type="video/webm" src="../../../assets/videos/rabbit.webm"/>
-            <track kind="subtitles" src="../assets/other/subtitles.vtt" srclang="en">
-        </video>
+        <main>
+            <section>
+                <header>
+                    <h2> Video </h2>
+                </header>
+                
+                <video src="../../../assets/videos/rabbit.webm" controls>
+        
+                    <!-- fallback -->
+                    <p> 
+                        Your browser doesn't support HTML5 video. 
+                        Here is a <a href="../../../assets/videos/rabbit.webm"> link to the video </a>
+                    </p>
+                </video>
+            </section>
+        
+            <section>
+                <header>
+                    <h2> Video with Sources </h2>
+                </header>
+                
+                <video class="my-video" preload="auto" poster="../assets/images/dinosaur.jpg" controls autoplay loop muted>
+                    <source type="video/mp4" src="../../../assets/videos/rabbit.mp4" />
+                    <source type="video/webm" src="../../../assets/videos/rabbit.webm" />
+        
+                    <!-- fallback -->
+                    <p> 
+                        Your browser doesn't support HTML5 video. 
+                        Here is a <a href="../../../assets/videos/rabbit.webm"> link to the video </a>
+                    </p>
+                </video>
+            </section>
+        
+            <section>
+                <header>
+                    <h2> Audio with Sources </h2>
+                </header>
+                
+                <audio controls>
+                    <source type="audio/mp3" src="../../../assets/audios/viper.mp3" />
+                    <source type="audio/ogg" src="../../../assets/audios/viper.ogg" />
+        
+                    <!-- fallback -->
+                    <p> 
+                        Your browser doesn't support HTML5 audio. 
+                        Here is a <a href="../../../assets/audios/viper.mp3"> link to the audio </a>
+                    </p>
+                </audio>
+            </section>
+        
+            <section>
+                <header>
+                    <h2> Video with Subtitles </h2>
+                </header>
+                
+                <video controls>
+                    <source type="video/mp4" src="../../../assets/videos/rabbit.mp4" />
+                    <source type="video/webm" src="../../../assets/videos/rabbit.webm" />
+                    <track kind="subtitles" src="../assets/other/subtitles.vtt" srclang="en">
+                </video>
+            </section>
+        </main>
     </body>
 </html>
