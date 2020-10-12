@@ -4,14 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/global.css">
-        <title> URL </title>
+        <title> URL API </title>
     </head>
     <body>
-        <section>
-            <header>
-                <h3> URL Info: </h3>
-            </header>
-            <main>
+        <header>
+            <h1> URL API </h1>
+        </header>
+
+        <main>
+            <article>
+                <header>
+                    <h3> URL Info: </h3>
+                </header>
+
                 <form>
                     <div>
                         <label> Inform a URL: </label>
@@ -28,21 +33,17 @@
                         <button type="submit"> Go! </button>
                     </div>
                 </form>
-            </main>
 
-            <p id="info"></p>
-        </section>
+                <p id="info"></p>
+            </article>
 
-        <hr/>
-
-        <section>
-            <header>
-                <h3> URL Parameters: </h3>
-            </header>
-            <main id="urlParametersMain">
-
-            </main>
-        </section>
+            <section>
+                <header>
+                    <h3> URL Parameters: </h3>
+                </header>
+                <div id="urlParametersContainer"></div>
+            </section>
+        </main>
 
         <script src="../js/url.js"></script>
     </body>

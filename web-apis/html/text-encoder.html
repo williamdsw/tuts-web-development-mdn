@@ -4,15 +4,29 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/global.css">
-        <title> Text Encoder </title>
+        <title> Text Encoder API </title>
     </head>
     <body>
-        <h3> Type something: </h3>
-        <input type="text" id="inputText">
+        <header>
+            <h1> Text Encoder API </h1>
+        </header>
 
-        <hr>
+        <main>
+            <section>
+                <header>
+                    <h3> Type something: </h3>
+                </header>
+                
+                <input type="text" id="inputText">
+            </section>
 
-        <textarea id="textareaOutput" cols="30" rows="10"></textarea>
+            <hr>
+
+            <section>
+                <textarea id="textareaOutput" cols="30" rows="10"></textarea>
+            </section>
+        </main>
+        
         <script src="../js/text-encoder.js"></script>
     </body>
 </html>

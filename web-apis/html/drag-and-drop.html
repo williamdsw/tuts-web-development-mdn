@@ -7,22 +7,29 @@
         <title> Drag And Drop </title>
     </head>
     <body>
+        <header>
+            <h1> Simple Drag 'n' Drop </h1>
+        </header>
 
-        <h2> Simple Drag 'n' Drop </h2>
-
-        <div id="redCard" class="card red-card" draggable="true"> I'm draggable! </div>
-        <div id="greenCard" class="card green-card" draggable="true"> Another draggable! </div>
-        <div id="blueCard" class="card blue-card" draggable="true"> Other draggable! </div>
-
-        <div class="card-list" dropzone="true"> Droppable Zone ! </div>
-
-        <hr/>
-
-        <h2> Multiple files Drag 'n' Drop </h2>
-
-        <div class="files-list" dropzone="true">
-            <h1> Drag your files from explorer here ! </h1>
-        </div>
+        <main>
+            <section>
+                <div id="redCard" class="card red-card" draggable="true"> I'm draggable! </div>
+                <div id="greenCard" class="card green-card" draggable="true"> Another draggable! </div>
+                <div id="blueCard" class="card blue-card" draggable="true"> Other draggable! </div>
+        
+                <div class="card-list" dropzone="true"> Droppable Zone ! </div>
+            </section>
+        
+            <hr />
+        
+            <section>
+                <h2> Multiple files Drag 'n' Drop </h2>
+        
+                <div class="files-list" dropzone="true">
+                    <h1> Drag your files from explorer here ! </h1>
+                </div>
+            </section>
+        </main>
 
         <script src="../js/drag-and-drop.js"></script>
     </body>

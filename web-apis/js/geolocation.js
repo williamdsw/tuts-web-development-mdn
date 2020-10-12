@@ -4,7 +4,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const status = document.querySelector('#status');
     const info = document.querySelector('#info');
     const mapLink = document.querySelector('#mapLink');
-    buttonFindMe.addEventListener('click', () => findGeolocation(status, info, mapLink));
+
+    if (buttonFindMe && status && info && mapLink) {
+        buttonFindMe.addEventListener('click', () => findGeolocation(status, info, mapLink));
+    }
 });
 
 function findGeolocation(status, info, mapLink) {

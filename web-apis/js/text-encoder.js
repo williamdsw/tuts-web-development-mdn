@@ -5,10 +5,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const textareaOutput = document.querySelector('#textareaOutput');
     const textEncoder = new TextEncoder();
 
-    inputText.addEventListener('input', function () {
-        if (this.value !== '') {
-            const encoded = textEncoder.encode(this.value);
-            textareaOutput.value = encoded;
-        }
-    });
+    if (inputText && textareaOutput) {
+        inputText.addEventListener('input', function () {
+            if (this.value !== '') {
+                const encoded = textEncoder.encode(this.value);
+                textareaOutput.value = encoded;
+            }
+        });
+    }
 });

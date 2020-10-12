@@ -4,8 +4,9 @@ window.addEventListener('DOMContentLoaded', () => {
     console.log('navigator', navigator);
 
     const propertiesOutput = document.querySelector('#propertiesOutput');
-
-    getProperties(propertiesOutput);
+    if (propertiesOutput) {
+        getProperties(propertiesOutput);
+    }
 });
 
 function getProperties(output) {
@@ -88,7 +89,6 @@ function getMimeTypes(output) {
                 </div>
                 `;
             }
-            
         }
         else {
             output.innerHTML += `<p> None mime type found! </p>`;

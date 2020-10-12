@@ -6,18 +6,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const video = document.querySelector('video');
 
-    document.addEventListener('keypress', (ev) => {
-        if (ev.keyCode === 13) {
-            toggleFullScreen(document.documentElement);
-        }
-        else if (ev.keyCode === 112) {
-            toggleFullScreen(video);
-        }
-
-    }, false);
+    if (video) {
+        document.addEventListener('keypress', (ev) => {
+            if (ev.keyCode === 13) {
+                toggleFullScreen(document.documentElement);
+            }
+            else if (ev.keyCode === 112) {
+                toggleFullScreen(video);
+            }
+    
+        }, false);
+    }
 });
 
 function toggleFullScreen(element) {
+    if (!element) return;
+
     if (!document.fullscreenElement) {
         element.requestFullscreen();
 

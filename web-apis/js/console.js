@@ -21,7 +21,6 @@ const bands = [
     { name: 'Sex Pistols', genre: 'Punk Rock' },
 ];
 
-
 window.addEventListener('DOMContentLoaded', () => {
     const inputText = document.querySelector('#inputText');
     const buttonLog = document.querySelector('#buttonLog');

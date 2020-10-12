@@ -7,18 +7,25 @@
         <title> Broadcast Channel Sent </title>
     </head>
     <body>
-        <div id="containerSend">
-            <h3> Send your message: </h3>
-            <textarea id="textareaMessage" cols="30" rows="10"></textarea>
-            <button type="button"> Send </button>
-        </div>
-        
-        <div id="containerReceived">
-            <h3> Message Received </h3>
-            <div class="message">
+        <header>
+            <h1> Broadcast Channel Sent </h1>
+        </header>
 
-            </div>
-        </div>
+        <main>
+            <article>
+                <div id="containerSend">
+                    <h3> Send your message: </h3>
+                    <textarea id="textareaMessage" cols="30" rows="10"></textarea>
+                    <button type="button"> Send </button>
+                </div>
+                
+                <div id="containerReceived">
+                    <h3> Message Received </h3>
+                    <div class="message"></div>
+                </div>
+            </article>
+        </main>
+        
         <script src="../js/broadcast-channel.js"></script>
     </body>
 </html>

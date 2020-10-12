@@ -7,7 +7,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const buttonBack = document.querySelector('#buttonBack');
     const buttonForward = document.querySelector('#buttonForward');
 
-    header.innerText += history.length;
-    buttonBack.addEventListener('click', () => history.back());
-    buttonForward.addEventListener('click', () => history.forward());
+    if (header && buttonBack && buttonForward) {
+        header.innerText += history.length;
+        buttonBack.addEventListener('click', () => history.back());
+        buttonForward.addEventListener('click', () => history.forward());
+    }
 });
