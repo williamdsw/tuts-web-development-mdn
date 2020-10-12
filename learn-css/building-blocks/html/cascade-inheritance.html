@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="../css/cascade-inheritance.css">
+
         <title> Cascade and Inheritance </title>
     </head>
+
     <body>
-        <h1> Cascade and Inheritance </h1>
+        <header>
+            <h1> Cascade and Inheritance </h1>
+        </header>
+
         <hr>
 
-        <p> As the body has been set to have a color of blue this is inherited through the descendants. </p>
-        <p> We can change the color by targetting the element with a selector, such as this <span>span</span>. </p>
+        <main>
+            <article>
+                <p> As the body has been set to have a color of blue this is inherited through the descendants. </p>
+                <p> We can change the color by targetting the element with a selector, such as this <span>span</span>. </p>
 
-        <ul class="main">
-            <li> Item One </li>
-            <li> 
-                Item Two 
-                <ul>
-                    <li> 2.1 </li>
-                    <li> 2.2 </li>
-                </ul>
-            </li>
-            <li> 
-                Item Three 
-                <ul class="special">
-                    <li>  
-                        3.1
+                <ul class="main">
+                    <li> Item One </li>
+                    <li>
+                        Item Two
                         <ul>
-                            <li> 3.1.1 </li>
-                            <li> 3.1.2 </li>
+                            <li> 2.1 </li>
+                            <li> 2.2 </li>
                         </ul>
                     </li>
-                    <li> 3.2 </li>
+                    <li>
+                        Item Three
+                        <ul class="special">
+                            <li>
+                                3.1
+                                <ul>
+                                    <li> 3.1.1 </li>
+                                    <li> 3.1.2 </li>
+                                </ul>
+                            </li>
+                            <li> 3.2 </li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-        </ul>
 
-        <p class="other">
-            Some paragraph with red color!
-            <a class="link" href="#"> This link inherits the color! </a>
-        </p>
+                <p class="other">
+                    Some paragraph with red color!
+                    <a class="link" href="#"> This link inherits the color! </a>
+                </p>
 
-        <blockquote>
-            <p> This blockquite is styled! </p>
-        </blockquote>
+                <blockquote>
+                    <p> This blockquite is styled! </p>
+                </blockquote>
 
-        <blockquote class="fix-this">
-            <p> This blockquite is not style! </p>
-        </blockquote>
+                <blockquote class="fix-this">
+                    <p> This blockquite is not style! </p>
+                </blockquote>
 
-        <p class="better"> This is a paragraph. </p>
-        <p id="winning" class="better"> One selector to rule them all! </p>
+                <p class="better"> This is a paragraph. </p>
+                <p id="winning" class="better"> One selector to rule them all! </p>
+            </article>
+        </main>
     </body>
+
 </html>

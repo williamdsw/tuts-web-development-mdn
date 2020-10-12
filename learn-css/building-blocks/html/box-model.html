@@ -3,95 +3,104 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="../css/box-model.css">
+        
         <title> Box Model </title>
     </head>
     <body>
-        <h1> Box Model </h1>
+        <header>
+            <h1> Box Model </h1>
+        </header>
+
         <hr>
 
-        <div class="box">
-            display: block; width: 350px; height: 150px;
-            margin: 10px; padding: 25px; border: 5px solid black;
-        </div>
-
-        <div class="box alternative-box">
-            same as above, but box-sizing: border-box;
-        </div>
-
-        <div class="box alternative-box margin">
-            <p> Margin: 5rem </p>
-        </div>
-
-        <div class="box alternative-box margin-left">
-            <p> Margin Left: 5rem </p>
-        </div>
-
-        <div class="box alternative-box margin-right">
-            <p> Margin Right: 5rem </p>
-        </div>
-
-        <div class="box alternative-box margin-top">
-            <p> Margin Top: 5rem </p>
-        </div>
-
-        <div class="box alternative-box margin-bottom">
-            <p> Margin Bottom: 5rem </p>
-        </div>
-
-        <div class="box alternative-box padding">
-            <p> Padding: 5rem </p>
-        </div>
-
-        <div class="box alternative-box padding-left">
-            <p> Padding Left: 5rem </p>
-        </div>
-
-        <div class="box alternative-box padding-right">
-            <p> Padding Right: 5rem </p>
-        </div>
-
-        <div class="box alternative-box padding-top">
-            <p> Padding Top: 5rem </p>
-        </div>
-
-        <div class="box alternative-box padding-bottom">
-            <p> Padding Bottom: 5rem </p>
-        </div>
-
-        <div class="box alternative-box ">
-            <p class="border"> border: 3px solid thistle; </p>
-        </div>
-
-        <div class="box alternative-box ">
-            <p class="border-top"> border-top: 3px solid thistle; </p>
-        </div>
-
-        <div class="box alternative-box ">
-            <p class="border-right"> border-right: 3px solid thistle; </p>
-        </div>
-
-        <div class="box alternative-box ">
-            <p class="border-bottom"> border-bottom: 3px solid thistle; </p>
-        </div>
-
-        <div class="box alternative-box ">
-            <p class="border-left"> border-left: 3px solid thistle; </p>
-        </div>
-
-        <p class="with-span">
-            I am a paragraph and this is a <span>span</span> inside that paragraph. 
-            A span is an inline element and so does not respect width and height.
-        </p>
-
-        <p class="inline-box">
-            I am a paragraph and this is a <span>span</span> inside that paragraph. 
-            A span is an inline element and so does not respect width and height.
-        </p>
-
-        <p class="inline-box">
-            I am a paragraph and this is a <span>span</span> inside that paragraph. 
-            A span is an inline element and so does not respect width and height.
-        </p>
+        <main>
+            <article>
+                <div class="box">
+                    display: block; width: 350px; height: 150px;
+                    margin: 10px; padding: 25px; border: 5px solid black;
+                </div>
+        
+                <div class="box alternative-box">
+                    same as above, but box-sizing: border-box;
+                </div>
+        
+                <div class="box alternative-box margin">
+                    <p> Margin: 5rem </p>
+                </div>
+        
+                <div class="box alternative-box margin-left">
+                    <p> Margin Left: 5rem </p>
+                </div>
+        
+                <div class="box alternative-box margin-right">
+                    <p> Margin Right: 5rem </p>
+                </div>
+        
+                <div class="box alternative-box margin-top">
+                    <p> Margin Top: 5rem </p>
+                </div>
+        
+                <div class="box alternative-box margin-bottom">
+                    <p> Margin Bottom: 5rem </p>
+                </div>
+        
+                <div class="box alternative-box padding">
+                    <p> Padding: 5rem </p>
+                </div>
+        
+                <div class="box alternative-box padding-left">
+                    <p> Padding Left: 5rem </p>
+                </div>
+        
+                <div class="box alternative-box padding-right">
+                    <p> Padding Right: 5rem </p>
+                </div>
+        
+                <div class="box alternative-box padding-top">
+                    <p> Padding Top: 5rem </p>
+                </div>
+        
+                <div class="box alternative-box padding-bottom">
+                    <p> Padding Bottom: 5rem </p>
+                </div>
+        
+                <div class="box alternative-box ">
+                    <p class="border"> border: 3px solid thistle; </p>
+                </div>
+        
+                <div class="box alternative-box ">
+                    <p class="border-top"> border-top: 3px solid thistle; </p>
+                </div>
+        
+                <div class="box alternative-box ">
+                    <p class="border-right"> border-right: 3px solid thistle; </p>
+                </div>
+        
+                <div class="box alternative-box ">
+                    <p class="border-bottom"> border-bottom: 3px solid thistle; </p>
+                </div>
+        
+                <div class="box alternative-box ">
+                    <p class="border-left"> border-left: 3px solid thistle; </p>
+                </div>
+        
+                <p class="with-span">
+                    I am a paragraph and this is a <span>span</span> inside that paragraph. 
+                    A span is an inline element and so does not respect width and height.
+                </p>
+        
+                <p class="inline-box">
+                    I am a paragraph and this is a <span>span</span> inside that paragraph. 
+                    A span is an inline element and so does not respect width and height.
+                </p>
+        
+                <p class="inline-box">
+                    I am a paragraph and this is a <span>span</span> inside that paragraph. 
+                    A span is an inline element and so does not respect width and height.
+                </p>
+            </article>
+        </main>
     </body>
 </html>

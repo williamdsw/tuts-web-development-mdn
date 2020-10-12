@@ -3,66 +3,86 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="../css/selectors.css">
+
         <title> Selectors </title>
     </head>
     <body>
-        <h1> Selectors </h1>
+        <header>
+            <h1> Selectors </h1>
+        </header>
+
         <hr>
 
-        <h2> Type, class and ID selectors </h2>
-        <p>
-            Veggies es bonus vobis, proinde vos postulo essum magis 
-            <span class="special"> kohlrabi welsh onion </span> 
-            daikon amaranth tatsoi tomatillo melon azuki bean garlic. 
-        </p>
+        <main>
+            <section>
+                <h2> Type, class and ID selectors </h2>
+                <p>
+                    Veggies es bonus vobis, proinde vos postulo essum magis
+                    <span class="special"> kohlrabi welsh onion </span>
+                    daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+                </p>
 
-        <p> 
-            Gumbo beet greens corn soko <span id="myStrong"> endive </span> gumbo gourd. 
-            Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. 
-            Dandelion cucumber earthnut pea peanut soko zucchini.
-        </p>
+                <p>
+                    Gumbo beet greens corn soko <span id="myStrong"> endive </span> gumbo gourd.
+                    Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato.
+                    Dandelion cucumber earthnut pea peanut soko zucchini.
+                </p>
 
-        <div class="notebook"> This is an informational note. </div>
-        <div class="notebook warning"> This note shows a warning. </div>
-        <div class="notebook danger"> This note shows danger! </div>
-        <div class="danger"> This won't get styled - it also needs to have the notebook class. </div>
+                <div class="notebook"> This is an informational note. </div>
+                <div class="notebook warning"> This note shows a warning. </div>
+                <div class="notebook danger"> This note shows danger! </div>
+                <div class="danger"> This won't get styled - it also needs to have the notebook class. </div>
 
-        <br>
+                <br>
+            </section>
 
-        <h2> Attribute selectors </h2>
-        <ul>
-            <li> Item 1 </li>
-            <li class="a"> Item 2 </li>
-            <li class="a b"> Item 3 </li>
-            <li class="ab"> Item 4 </li>
-        </ul>
+            <section>
+                <h2> Attribute selectors </h2>
+                <ul>
+                    <li> Item 1 </li>
+                    <li class="a"> Item 2 </li>
+                    <li class="a b"> Item 3 </li>
+                    <li class="ab"> Item 4 </li>
+                </ul>
 
-        <div class="box box-BLUE"></div>
-        <div class="box red-box"></div>
-        <div class="box"></div>
+                <div class="box box-BLUE"></div>
+                <div class="box red-box"></div>
+                <div class="box"></div>
 
-        <br>
+                <br>
+            </section>
 
-        <h2> Pseudo-classes and pseudo-elements </h2>
-        <article>
-            <p> Veggies es bonus vobis, proinde vos postulo essum magis <br> kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
-            <p> Gumbo beet greens corn soko endive gumbo gourd. <br> Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. <br> Dandelion cucumber earthnut pea peanut soko zucchini. </p>
-            <p> Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion <br> daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
-            <p> Gumbo beet greens corn soko endive gumbo gourd. <br> Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. <br> Dandelion cucumber earthnut pea peanut soko zucchini. </p>
-        </article>
+            <section>
+                <h2> Pseudo-classes and pseudo-elements </h2>
+                <article>
+                    <p> Veggies es bonus vobis, proinde vos postulo essum magis <br> kohlrabi welsh onion daikon amaranth
+                        tatsoi tomatillo melon azuki bean garlic.</p>
+                    <p> Gumbo beet greens corn soko endive gumbo gourd. <br> Parsley shallot courgette tatsoi pea sprouts
+                        fava bean collard greens dandelion okra wakame tomato. <br> Dandelion cucumber earthnut pea peanut
+                        soko zucchini. </p>
+                    <p> Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion <br> daikon amaranth
+                        tatsoi tomatillo melon azuki bean garlic.</p>
+                    <p> Gumbo beet greens corn soko endive gumbo gourd. <br> Parsley shallot courgette tatsoi pea sprouts
+                        fava bean collard greens dandelion okra wakame tomato. <br> Dandelion cucumber earthnut pea peanut
+                        soko zucchini. </p>
+                </article>
 
-        <div class="custom-div">
-            This is my custom box!
-        </div>
+                <div class="custom-div">
+                    This is my custom box!
+                </div>
+            </section>
 
-        <h2> Combinators </h2>
-        <section>
-            <p> Text in section! <span> Span Child ! </span> </p>
-            <span> Other span! </span>
-        </section>
-        <p> Text not in section! </p>
-        <p> Other text not in section! </p>
-
+            <section>
+                <h2> Combinators </h2>
+                <section>
+                    <p> Text in section! <span> Span Child ! </span> </p>
+                    <span> Other span! </span>
+                </section>
+                <p> Text not in section! </p>
+                <p> Other text not in section! </p>
+            </section>
+        </main>
     </body>
 </html>
