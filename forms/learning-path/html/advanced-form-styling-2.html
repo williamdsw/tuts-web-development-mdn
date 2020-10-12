@@ -5,59 +5,67 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../../css/forms/learning-path/advanced-form-styling-2.css">
+        <link rel="stylesheet" href="../css/advanced-form-styling-2.css">
 
         <title> Advanced Form Styling </title>
     </head>
     <body>
-        <form action="">
-            <div>
-                <label> Select box: </label>
-                <div class="select-wrapper">
-                    <select>
-                        <option> Banana </option>
-                        <option> Cherry </option>
-                        <option> Lemon </option>
-                    </select>
-                </div>
-            </div>
-            <div>
-                <label> Datalist: </label>
-                <input type="text" list="datalistFruits">
-                <datalist id="datalistFruits">
-                    <option> Banana </option>
-                    <option> Cherry </option>
-                    <option> Lemon </option>
-                </datalist>
-            </div>
-            <div>
-                <label> Datetime: </label>
-                <input type="datetime-local">
-            </div>
-            <div>
-                <label> Range: </label>
-                <input type="range">
-            </div>
-            <div>
-                <label> Color: </label>
-                <input type="color">
-            </div>
-            <div>
-                <label> File picker: </label>
-                <input type="file" id="inputFile">
-                <label for="inputFile"> Choose a file to upload </label>
-            </div>
-            <div>
-                <label> Progress: </label>
-                <progress max="100" value="75"></progress>
-            </div>
-            <div>
-                <label> Meter: </label>
-                <meter min="0" max="100" value="75" low="30" optimum="50" high="70"></meter>
-            </div>
-            <div>
-                <button type="submit"> Submit ? </button>
-            </div>
-        </form>
+        <header>
+            <h1> Advanced Form Styling </h1>
+        </header>
+
+        <main>
+            <article>
+                <form action="">
+                    <div>
+                        <label> Select box: </label>
+                        <div class="select-wrapper">
+                            <select>
+                                <option> Banana </option>
+                                <option> Cherry </option>
+                                <option> Lemon </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label> Datalist: </label>
+                        <input type="text" list="datalistFruits">
+                        <datalist id="datalistFruits">
+                            <option> Banana </option>
+                            <option> Cherry </option>
+                            <option> Lemon </option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label> Datetime: </label>
+                        <input type="datetime-local">
+                    </div>
+                    <div>
+                        <label> Range: </label>
+                        <input type="range">
+                    </div>
+                    <div>
+                        <label> Color: </label>
+                        <input type="color">
+                    </div>
+                    <div>
+                        <label> File picker: </label>
+                        <input type="file" id="inputFile">
+                        <label for="inputFile"> Choose a file to upload </label>
+                    </div>
+                    <div>
+                        <label> Progress: </label>
+                        <progress max="100" value="75"></progress>
+                    </div>
+                    <div>
+                        <label> Meter: </label>
+                        <meter min="0" max="100" value="75" low="30" optimum="50" high="70"></meter>
+                    </div>
+                    <div>
+                        <button type="submit"> Submit ? </button>
+                    </div>
+                </form>
+            </article>
+        </main>
     </body>
 </html>

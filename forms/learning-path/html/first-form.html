@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../css/first-form.css"/>
+
         <title> First Form </title>
-        <link rel="stylesheet" href="../../../css/forms/learning-path/first-form.css"/>
     </head>
     <body>
-        <form action="" method="POST">
-            <div>
-                <label for="inputName"> Name: </label>
-                <input type="text" id="inputName" name="name" value="">
-            </div>
-            <div>
-                <label for="inputEmail"> Email: </label>
-                <input type="email" id="inputEmail" name="email" value="">
-            </div>
-            <div>
-                <label for="textareaMessage"> Message: </label>
-                <textarea id="textareaMessage" cols="30" rows="10" name="message"></textarea>
-            </div>
-            <div>
-                <button type="submit"> Send your message </button>
-            </div>
-        </form>
+        <header>
+            <h1> First Form </h1>
+        </header>
+
+        <main>
+            <article>
+                <form action="" method="POST">
+                    <div>
+                        <label for="inputName"> Name: </label>
+                        <input type="text" id="inputName" name="name" value="">
+                    </div>
+                    <div>
+                        <label for="inputEmail"> Email: </label>
+                        <input type="email" id="inputEmail" name="email" value="">
+                    </div>
+                    <div>
+                        <label for="textareaMessage"> Message: </label>
+                        <textarea id="textareaMessage" cols="30" rows="10" name="message"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit"> Send your message </button>
+                    </div>
+                </form>
+            </article>
+        </main>
     </body>
 </html>

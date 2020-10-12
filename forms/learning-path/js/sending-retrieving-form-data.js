@@ -1,14 +1,14 @@
 
-(function() {
-    
-    const inputFiles = document.getElementById('inputFiles');
-    const fileNames = document.getElementById('fileNames');
+window.addEventListener('DOMContentLoaded', () => {
+    const inputFiles = document.querySelector('#inputFiles');
+    const fileNames = document.querySelector('#fileNames');
 
-    inputFiles.addEventListener('change', () => {
-        fileNames.innerHTML = '';
-        for (const file of inputFiles.files) {
-            fileNames.innerHTML += `${file.name}, `;
-        }
-    });
-
-})();
+    if (inputFiles && fileNames) {
+        inputFiles.addEventListener('change', () => {
+            fileNames.innerHTML = '';
+            for (const file of inputFiles.files) {
+                fileNames.innerHTML += `${file.name}, `;
+            }
+        });
+    }
+});

@@ -3,57 +3,72 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../../css/forms/learning-path/sending-retrieving-form-data.css">
+
+        <link rel="stylesheet" href="../css/sending-retrieving-form-data.css">
+
         <title> Sending and Retrieving Form Data </title>
     </head>
     <body>
+        <header>
+            <h1> Sending and Retrieving Form Data </h1>
+        </header>
 
         <!-- absolute URL : https://example.com -->
         <!-- relative URL : /example -->
 
-        <form action="https://www.example.com.br" method="GET">
-            <div>
-                <label> What greeting do you want to say? </label>
-                <input type="text" name="greeting" value="Hi">
-            </div>
-            <div>
-                <label> Who do you want to say it to? </label>
-                <input type="text" name="to" value="Mom">
-            </div>
-            <div>
-                <button type="submit"> Send my greetings </button>
-            </div>
-        </form>
+        <main>
+            <article>
+                <section>
+                    <form action="https://www.example.com.br" method="GET">
+                        <div>
+                            <label> What greeting do you want to say? </label>
+                            <input type="text" name="greeting" value="Hi">
+                        </div>
+                        <div>
+                            <label> Who do you want to say it to? </label>
+                            <input type="text" name="to" value="Mom">
+                        </div>
+                        <div>
+                            <button type="submit"> Send my greetings </button>
+                        </div>
+                    </form>
+                </section>
+        
+                <hr/>
 
-        <hr/>
+                <section>
+                    <form action="https://www.example.com.br" method="POST">
+                        <div>
+                            <label> What greeting do you want to say? </label>
+                            <input type="text" name="greeting" value="Hi">
+                        </div>
+                        <div>
+                            <label> Who do you want to say it to? </label>
+                            <input type="text" name="to" value="Mom">
+                        </div>
+                        <div>
+                            <button type="submit"> Send my greetings </button>
+                        </div>
+                    </form>
+                </section>
+        
+                <hr/>
 
-        <form action="https://www.example.com.br" method="POST">
-            <div>
-                <label> What greeting do you want to say? </label>
-                <input type="text" name="greeting" value="Hi">
-            </div>
-            <div>
-                <label> Who do you want to say it to? </label>
-                <input type="text" name="to" value="Mom">
-            </div>
-            <div>
-                <button type="submit"> Send my greetings </button>
-            </div>
-        </form>
+                <section>
+                    <form action="https://www.example.com.br" method="POST" enctype="multipart/form-data">
+                        <div>
+                            <input type="file" id="inputFiles" name="files" multiple>
+                            <label for="inputFiles"> Choose your files: </label>
+                            <span id="fileNames"></span>
+                        </div>
+                        <div>
+                            <button type="submit"> Send my greetings </button>
+                        </div>
+                    </form>
+                </section>
+            </article>
+        </main>
 
-        <hr/>
-
-        <form action="https://www.example.com.br" method="POST" enctype="multipart/form-data">
-            <div>
-                <input type="file" id="inputFiles" name="files" multiple>
-                <label for="inputFiles"> Choose your files: </label>
-                <span id="fileNames"></span>
-            </div>
-            <div>
-                <button type="submit"> Send my greetings </button>
-            </div>
-        </form>
-
-        <script src="../../../js/forms/learning-path/sending-retrieving-form-data.js"></script>
+        <script src="../js/sending-retrieving-form-data.js"></script>
     </body>
 </html>

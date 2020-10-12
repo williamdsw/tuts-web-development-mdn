@@ -1,4 +1,6 @@
 
+/* || global */
+
 body {
     font-family: 'Josefin Sans', sans-serif;
     margin: 20px auto;
@@ -20,6 +22,8 @@ fieldset > div {
     display: flex;
     margin-bottom: 20px;
 }
+
+/* || form elements */
 
 button, label, input[type="text"], textarea {
     display: block;
@@ -46,7 +50,8 @@ input:hover, input:focus {
     background-color: #eee;
 }
 
-/* disabled */
+/* || disabled */
+
 input[type="text"]:disabled {
     background: #eee;
     border: 1px solid #ccc;
@@ -61,7 +66,7 @@ button {
     margin: 0 auto;
 }
 
-/* read-write - read-only */
+/* || read-write - read-only */
 
 input:-moz-read-only, textarea:-moz-read-only, 
 input:read-only, textarea:read-only {
@@ -76,7 +81,7 @@ textarea:read-write {
     border-radius: 5px;
 }
 
-/* radio */ 
+/* || radio */ 
 
 input[type="radio"] {
     -webkit-appearance: none;
@@ -110,7 +115,7 @@ input[type="radio"]:checked::before {
     transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
 }
 
-/* checked ~ default */
+/* || checked ~ default */
 
 input ~ span {
     position: relative;
@@ -127,7 +132,7 @@ input:default ~ span::after {
     top: -3px;
 }
 
-/* when no item was selected ~ indeterminate */
+/* || when no item was selected ~ indeterminate */
 
 input[type="radio"]:indeterminate {
     border: 2px solid red;
@@ -135,12 +140,16 @@ input[type="radio"]:indeterminate {
 }
 
 @keyframes border-pulse {
-    from { border: 2px solid red; }
+    from { 
+        border: 2px solid red; 
+    }
 
-    to { border: 6px solid red; }
+    to { 
+        border: 6px solid red; 
+    }
 }
 
-/* placeholder */
+/* || placeholder */
 input[type="text"]:placeholder-shown {
     font-style: italic;
 }

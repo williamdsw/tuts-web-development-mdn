@@ -3,50 +3,75 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title> HTML5 Input Types </title>
     </head>
     <body>
-        <form>
-            <input type="email" name="email" value="email@gmail.com" required>
-            <input type="email" name="emails" value="email1@gmail.com,email2@gmail.com" multiple required>
-            <input type="search" name="search" value="Search something..." required>
-            <input type="tel" name="phone" value="9 9999-4521" required>
-            <input type="url" name="url" value="https://..." required>
-            <input type="number" name="age" min="1" max="10" step="2">
-            <input type="number" name="change" min="0" max="1" step="0.01">
+        <header>
+            <h1> HTML5 Input Types </h1>
+        </header>
 
-            <hr>
+        <main>
+            <article>
+                <form>
+                    <section>
+                        <input type="email" name="email" value="email@gmail.com" required>
+                        <input type="email" name="emails" value="email1@gmail.com,email2@gmail.com" multiple required>
+                        <input type="search" name="search" value="Search something..." required>
+                        <input type="tel" name="phone" value="9 9999-4521" required>
+                        <input type="url" name="url" value="https://..." required>
+                        <input type="number" name="age" min="1" max="10" step="2">
+                        <input type="number" name="change" min="0" max="1" step="0.01">
+                    </section>
+                    
+                    <hr>
 
-            <div>
-                <label for="inputPrice"> Choose a maximum house price: </label>
-                <input type="range" id="inputPrice" name="price" min="10000" max="1000000" step="100" value="250000">
-                <output class="price-output" for="inputPrice"></output>
-            </div>
+                    <section>
+                        <div>
+                            <label for="inputPrice"> Choose a maximum house price: </label>
+                            <input type="range" id="inputPrice" name="price" min="10000" max="1000000" step="100" value="250000">
+                            <output class="price-output" for="inputPrice"></output>
+                        </div>
+                    </section>
+        
+                    <hr>
 
-            <hr>
+                    <section>
+                        <div>
+                            <header>
+                                <h3> Date & Time </h3>
+                            </header>
+                            
+                            <input type="datetime-local" name="datetime">
+                            <input type="date" name="date">
+                            <input type="time" name="time">
+                            <input type="month" name="month">
+                            <input type="week" name="week">
+                            <input type="date" min="2019-01-01" max="2020-12-31" step="1">
+                        </div>
+                    </section>
+        
+                    <hr>
 
-            <div>
-                <h3> Date & Time </h3>
-                <input type="datetime-local" name="datetime">
-                <input type="date" name="date">
-                <input type="time" name="time">
-                <input type="month" name="month">
-                <input type="week" name="week">
-                <input type="date" min="2019-01-01" max="2020-12-31" step="1">
-            </div>
+                    <section>
+                        <div>
+                            <header>
+                                <h3> Color Picker </h3>
+                            </header>
+                            
+                            <input type="color" name="color">
+                        </div>
+                    </section>
+        
+                    <hr>
 
-            <hr>
+                    <section>
+                        <button type="submit"> Submit </button>
+                    </section>
+                </form>
+            </article>
+        </main>
 
-            <div>
-                <h3> Color Picker </h3>
-                <input type="color" name="color">
-            </div>
-
-            <hr>
-
-            <button type="submit"> Submit </button>
-        </form>
-
-        <script src="../../../js/forms/learning-path/html5-input-types.js"></script>
+        <script src="../js/html5-input-types.js"></script>
     </body>
 </html>

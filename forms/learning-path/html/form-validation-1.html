@@ -4,26 +4,34 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../../css/forms/form-validation-1.css">
+        <link rel="stylesheet" href="../css/form-validation-1.css">
 
         <title> Form Validation 1 </title>
     </head>
     <body>
-        <form action="">
-            <div>
-                <label for="inputChoose"> Would you prefer a banana or cherry? </label>
-                <input type="text" id="inputChoose" name="choose" required pattern="[Bb]anana|[Cc]herry">    
-            </div>
-            <div>
-                <label for="inputAmount"> How many would you like ? </label>
-                <input type="number" id="inputAmount" name="amount" value="1" min="1" max="10">
-            </div>
-            <div>
-                <label for="inputAge"> How old are you ? </label>
-                <input type="number" id="inputAge" name="age" value="" min="12" max="120" step="1" pattern="\d+">
-            </div>
-            
-            <button type="submit"> Submit </button>
-        </form>
+        <header>
+            <h1> Form Validation 1 </h1>
+        </header>
+
+        <main>
+            <article>
+                <form action="">
+                    <div>
+                        <label for="inputChoose"> Would you prefer a banana or cherry? </label>
+                        <input type="text" id="inputChoose" name="choose" required pattern="[Bb]anana|[Cc]herry">    
+                    </div>
+                    <div>
+                        <label for="inputAmount"> How many would you like ? </label>
+                        <input type="number" id="inputAmount" name="amount" value="1" min="1" max="10">
+                    </div>
+                    <div>
+                        <label for="inputAge"> How old are you ? </label>
+                        <input type="number" id="inputAge" name="age" value="" min="12" max="120" step="1" pattern="\d+">
+                    </div>
+                    
+                    <button type="submit"> Submit </button>
+                </form>
+            </article>
+        </main>
     </body>
 </html>

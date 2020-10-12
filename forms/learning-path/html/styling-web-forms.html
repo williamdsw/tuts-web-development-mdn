@@ -4,46 +4,53 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../../../css/forms/learning-path/styling-web-forms.css">
+        <link rel="stylesheet" href="../css/styling-web-forms.css">
 
         <title> Styling Web Forms </title>
     </head>
     <body>
-        <div class="same-size">
-            <button type="button"> Button </button> <br/>
-            <input type="text" value="Input"> <br/>
-            <input type="date"> <br/>
-            <select>
-                <option> Item 1 </option>
-                <option> Item 2 </option>
-                <option> Item 3 </option>
-            </select> 
-            <br/>
-            <textarea cols="30" rows="10"> TextArea </textarea>
-        </div>
+        <header>
+            <h1> Styling Web Forms </h1>
+        </header>
 
-        <div>
-            <fieldset id="customFieldset">
-                <legend> What is your favorite Band ? </legend>
-
-                <div>
-                    <input type="radio" name="band" value="Kiss">
-                    <label> Kiss </label>
+        <main>
+            <article>
+                <div class="same-size">
+                    <button type="button"> Button </button> <br/>
+                    <input type="text" value="Input"> <br/>
+                    <input type="date"> <br/>
+                    <select>
+                        <option> Item 1 </option>
+                        <option> Item 2 </option>
+                        <option> Item 3 </option>
+                    </select> 
+                    <br/>
+                    <textarea cols="30" rows="10"> TextArea </textarea>
                 </div>
-                <div>
-                    <input type="radio" name="band" value="Cheap Trick">
-                    <label> Cheap Trick </label>
-                </div>
-                <div>
-                    <input type="radio" name="band" value="Guns 'N' Roses">
-                    <label> Guns 'N' Roses </label>
-                </div>
-                <div>
-                    <input type="radio" name="band" value="Aerosmith">
-                    <label> Aerosmith </label>
-                </div>
-            </fieldset>
-        </div>
         
+                <div>
+                    <fieldset id="customFieldset">
+                        <legend> What is your favorite Band ? </legend>
+        
+                        <div>
+                            <input type="radio" name="band" value="Kiss">
+                            <label> Kiss </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="band" value="Cheap Trick">
+                            <label> Cheap Trick </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="band" value="Guns 'N' Roses">
+                            <label> Guns 'N' Roses </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="band" value="Aerosmith">
+                            <label> Aerosmith </label>
+                        </div>
+                    </fieldset>
+                </div>
+            </article>
+        </main>
     </body>
 </html>

@@ -1,6 +1,11 @@
-div { padding: 5px; margin: 5px; }
+div { 
+    padding: 5px; 
+    margin: 5px; 
+}
 
-input#inputFiles { display: none; }
+input#inputFiles { 
+    display: none; 
+}
 
 label[for="inputFiles"] {
     display: inline-block;

@@ -4,30 +4,42 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../../../css/forms/learning-path/form-validation-2.css">
+        <link rel="stylesheet" href="../css/form-validation-2.css">
 
         <title> Form Validation 2 </title>
     </head>
     <body>
-        <form action="">
-            <div>
-                <label for="inputEmail"> I would like you to provide me with an e-mail address: </label>
-                <input type="email" id="inputEmail" name="email">
-            </div>
-            
-            <button type="submit"> Submit </button>
-        </form>
+        <header>
+            <h1> Form Validation 2 </h1>
+        </header>
 
-        <form novalidate>
-            <div>
-                <label for="inputOtherEmail"> Please enter an email address: </label>
-                <input type="email" id="inputOtherEmail" name="email" minlength="8" required>
-                <span class="error" aria-live="polite"></span>
-            </div>
-            
-            <button type="submit"> Submit </button>
-        </form>
+        <main>
+            <article>
+                <section>
+                    <form action="">
+                        <div>
+                            <label for="inputEmail"> I would like you to provide me with an e-mail address: </label>
+                            <input type="email" id="inputEmail" name="email">
+                        </div>
+                        
+                        <button type="submit"> Submit </button>
+                    </form>
+                </section>
 
-        <script src="../../../js/forms/learning-path/form-validation-2.js"></script>
+                <section>
+                    <form novalidate>
+                        <div>
+                            <label for="inputOtherEmail"> Please enter an email address: </label>
+                            <input type="email" id="inputOtherEmail" name="email" minlength="8" required>
+                            <span class="error" aria-live="polite"></span>
+                        </div>
+                        
+                        <button type="submit"> Submit </button>
+                    </form>
+                </section>
+            </article>
+        </main>
+
+        <script src="../js/form-validation-2.js"></script>
     </body>
 </html>

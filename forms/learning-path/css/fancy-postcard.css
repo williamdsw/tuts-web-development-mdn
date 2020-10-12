@@ -1,22 +1,23 @@
 
-/* fonts imports */
+/* || fonts imports */
+
 @font-face {
     font-family: 'handwriting';
-    src: url('../../assets/fonts/journal-webfont.woff2') format('woff2'),
-         url('../../assets/fonts/journal-webfont.woff') format('woff');
+    src: url('../../../assets/fonts/journal-webfont.woff2') format('woff2'),
+         url('../../../assets/fonts/journal-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'typewriter';
-    src: url('../../assets/fonts/veteran_typewriter-webfont.woff2') format('woff2'),
-         url('../../assets/fonts/veteran_typewriter-webfont.woff') format('woff');
+    src: url('../../../assets/fonts/veteran_typewriter-webfont.woff2') format('woff2'),
+         url('../../../assets/fonts/veteran_typewriter-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-/* overall layout */
+/* || overall layout */
 
 body {
     font: 1.3rem sans-serif;
@@ -32,9 +33,9 @@ form {
     margin: 0 auto;
     padding: 1em;
     box-sizing: border-box;
-    background: #FFF url(../../assets/images/background.jpg);
+    background: #FFF url('../../../assets/images/background.jpg');
 
-    /* grid */
+    /* || grid */
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
@@ -54,7 +55,7 @@ div#from, div#reply {
     display: flex;
 }
 
-/* labels and controls */
+/* || labels and controls */
 
 label {
     font: 0.8em "typewriter", sans-serif;
@@ -85,7 +86,7 @@ textarea {
     overflow: auto;
 }
 
-/* styling the submit button */
+/* || styling the submit button */
 button {
     padding: 5px;
     font: bold 0.6em sans-serif;

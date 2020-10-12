@@ -1,5 +1,5 @@
 
-(function () {
+window.addEventListener('DOMContentLoaded', () => {
     const progressBar = document.getElementById('progressBar');
     const meter = document.getElementById('meter');
     const buttonResetProgress = document.getElementById('buttonResetProgress');
@@ -56,5 +56,4 @@
 
         }, 50);
     }
-
-})();
+});

@@ -4,32 +4,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet" href="../../../css/forms/learning-path/fancy-postcard.css">
+        <link type="text/css" rel="stylesheet" href="../css/fancy-postcard.css">
 
         <title> Fancy Postcard </title>
     </head>
     <body>
-        <form action="">
-            <h1> to: Mozilla </h1>
-
-            <div id="from">
-                <label for="inputFrom"> From: </label>
-                <input type="text" id="inputFrom" name="from" value="">
-            </div>
-
-            <div id="reply">
-                <label for="inputReply"> Reply: </label>
-                <input type="email" id="inputReply" name="reply" value="">
-            </div>
-
-            <div id="message">
-                <label for="textareaMessage"> Your Message: </label>
-                <textarea id="textareaMessage" name="message" cols="30" rows="10"></textarea>
-            </div>
-
-            <div id="button">
-                <button type="submit"> Send your message </button>
-            </div>
-        </form>
+        <main>
+            <article>
+                <form action="">
+                    <header>
+                        <h1> to: Mozilla </h1>
+                    </header>
+        
+                    <div id="from">
+                        <label for="inputFrom"> From: </label>
+                        <input type="text" id="inputFrom" name="from" value="">
+                    </div>
+        
+                    <div id="reply">
+                        <label for="inputReply"> Reply: </label>
+                        <input type="email" id="inputReply" name="reply" value="">
+                    </div>
+        
+                    <div id="message">
+                        <label for="textareaMessage"> Your Message: </label>
+                        <textarea id="textareaMessage" name="message" cols="30" rows="10"></textarea>
+                    </div>
+        
+                    <div id="button">
+                        <button type="submit"> Send your message </button>
+                    </div>
+                </form>
+            </article>
+        </main>
     </body>
 </html>
