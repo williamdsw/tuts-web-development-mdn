@@ -1,5 +1,5 @@
 
-/* basic functionality */
+/* || basic functionality */
 
 .select {
     position: relative;
@@ -22,7 +22,7 @@
     visibility: hidden;
 }
 
-/* custom */
+/* || custom */
 
 .select  {
     font-family: Verdana, Arial, sans-serif;
@@ -89,7 +89,7 @@
     color: #FFFFFF;
 }
 
-/* dealing with fallback */
+/* || dealing with fallback */
 
 .widget select, 
 .no-widget .select {

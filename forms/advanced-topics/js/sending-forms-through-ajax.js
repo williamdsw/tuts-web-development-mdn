@@ -1,11 +1,16 @@
 
-window.addEventListener('load', function (){
+window.addEventListener('DOMContentLoaded', function (){
     const buttonRawData = document.querySelector('#buttonRawData');
     const buttonFormData = document.querySelector('#buttonFormData');
     const myForm = document.querySelector('#myForm');
 
-    buttonRawData.addEventListener('click', () => sendRawData ({ test: 'ok!' }));
-    buttonFormData.addEventListener('click', () => sendFormData (myForm));
+    if (buttonRawData) {
+        buttonRawData.addEventListener('click', () => sendRawData ({ test: 'ok!' }));
+    }
+
+    if (buttonFormData && myForm) {
+        buttonFormData.addEventListener('click', () => sendFormData (myForm));
+    }
 });
 
 function sendRawData(data) {

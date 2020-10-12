@@ -3,24 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <title> Sending Forms Through Ajax </title>
     </head>
     <body>
-        <form id="myForm">
+        <header>
+            <h1> Sending Forms Through Ajax </h1>
+        </header>
 
-            <div>
-                <label> Name: </label>
-                <input type="text" name="name" value="John">
-            </div>
-            <div>
-                <label> Email: </label>
-                <input type="email" name="email" value="john@email.com">
-            </div>
+        <main>
+            <article>
+                <form id="myForm">
+                    <div>
+                        <label> Name: </label>
+                        <input type="text" name="name" value="John">
+                    </div>
+                    <div>
+                        <label> Email: </label>
+                        <input type="email" name="email" value="john@email.com">
+                    </div>
+        
+                    <button type="button" id="buttonRawData"> Submit Raw Data </button>
+                    <button type="button" id="buttonFormData"> Submit Form Data </button>
+                </form>
+            </article>
+        </main>
 
-            <button type="button" id="buttonRawData"> Submit Raw Data </button>
-            <button type="button" id="buttonFormData"> Submit Form Data </button>
-        </form>
-
-        <script src="../../../js/forms/advanced-topics/sending-forms-through-ajax.js"></script>
+        <script src="../js/sending-forms-through-ajax.js"></script>
     </body>
 </html>
