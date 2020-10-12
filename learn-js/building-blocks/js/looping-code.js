@@ -17,42 +17,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputNumber = document.querySelector('#inputNumber');
     const buttonGenerate = document.querySelector('#buttonGenerate');
 
-    paragraphCats = document.getElementById('cats');
-    inputSearch = document.getElementById('inputSearch');
-    const buttonSearch = document.getElementById('buttonSearch');
-    paragraphContacts = document.getElementById('contacts');
+    paragraphCats = document.querySelector('#cats');
+    inputSearch = document.querySelector('#inputSearch');
+    const buttonSearch = document.querySelector('#buttonSearch');
+    paragraphContacts = document.querySelector('#contacts');
 
-    inputOtherNumber = document.getElementById('inputOtherNumber');
-    const buttonSquareRoot = document.getElementById('buttonSquareRoot');
-    paragraphOutput = document.getElementById('output');
+    inputOtherNumber = document.querySelector('#inputOtherNumber');
+    const buttonSquareRoot = document.querySelector('#buttonSquareRoot');
+    paragraphOutput = document.querySelector('#output');
 
     const HEIGHT = canvas.clientHeight;
     const WIDTH = canvas.clientWidth;
 
-    inputNumber.addEventListener('input', () => {
-        const disabled = inputNumber.value.length === 0;
-        buttonGenerate.disabled = disabled;
-    });
-
-    buttonGenerate.addEventListener('click', () => {
-        if (inputNumber.value !== '') {
-            const numberOfCircles = parseInt(inputNumber.value);
-
-            context.clearRect(0, 0, WIDTH, HEIGHT);
-            for(let i = 1; i <= numberOfCircles; i++) {
-                context.beginPath();
-                context.fillStyle = 'rgba(255,0,0,0.5)';
-                context.arc(random(WIDTH), random(HEIGHT), random(50), 0, 2 * Math.PI);
-                context.fill();
-            }
-        }
-    });
-
-    buttonSearch.addEventListener('click', searchContacts);
-    buttonSquareRoot.addEventListener('click', generateSquareRoots);
-
-    paragraphCats.innerText = printCats();
+    if (inputNumber && buttonGenerate && context) {
+        inputNumber.addEventListener('input', function() {
+            const disabled = this.value.length === 0;
+            buttonGenerate.disabled = disabled;
+        });
     
+        buttonGenerate.addEventListener('click', () => {
+            if (inputNumber.value !== '') {
+                const numberOfCircles = parseInt(inputNumber.value);
+    
+                context.clearRect(0, 0, WIDTH, HEIGHT);
+                for(let i = 1; i <= numberOfCircles; i++) {
+                    context.beginPath();
+                    context.fillStyle = 'rgba(255,0,0,0.5)';
+                    context.arc(random(WIDTH), random(HEIGHT), random(50), 0, 2 * Math.PI);
+                    context.fill();
+                }
+            }
+        });
+    }
+
+    if (buttonSearch) {
+        buttonSearch.addEventListener('click', searchContacts);
+    }
+
+    if (buttonSquareRoot) {
+        buttonSquareRoot.addEventListener('click', generateSquareRoots);
+    }
+
+    if (paragraphCats) {
+        paragraphCats.innerText = printCats();
+    }
 });
 
 function random(number) {
@@ -77,7 +85,7 @@ function printCats () {
 }
 
 function searchContacts() {
-    if (inputSearch.value !== '') {
+    if (inputSearch && inputSearch.value !== '') {
         const search = inputSearch.value;
         inputSearch.value = '';
         inputSearch.focus();
@@ -96,7 +104,7 @@ function searchContacts() {
 }
 
 function generateSquareRoots() {
-    if (inputOtherNumber.value !== '') {
+    if (inputOtherNumber && paragraphOutput && inputOtherNumber.value !== '') {
         paragraphOutput.textContent = '';
         const number = parseInt(inputOtherNumber.value);
 

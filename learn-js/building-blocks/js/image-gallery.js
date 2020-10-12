@@ -8,22 +8,26 @@ window.addEventListener('DOMContentLoaded', () => {
     const buttonDarken = document.querySelector('button.dark');
     const overlay = document.querySelector('#overlay');
 
-    for (const url of imagesUrls) {
-        const img = document.createElement('img');
-        img.src = baseImageUrl + url;
-        img.alt = url;
-        img.title = url;
-
-        img.addEventListener('click', () => {
-            displayedImage.src = img.src;
-            displayedImage.alt = img.alt;
-            displayedImage.title = img.title;
-        });
-
-        thumbnailBar.appendChild(img);
+    if (thumbnailBar && displayedImage) {
+        for (const url of imagesUrls) {
+            const img = document.createElement('img');
+            img.src = baseImageUrl + url;
+            img.alt = url;
+            img.title = url;
+    
+            img.addEventListener('click', () => {
+                displayedImage.src = img.src;
+                displayedImage.alt = img.alt;
+                displayedImage.title = img.title;
+            });
+    
+            thumbnailBar.appendChild(img);
+        }
     }
 
-    buttonDarken.addEventListener('click', function () {
-        overlay.classList.toggle('overlay');
-    });
+    if (buttonDarken && overlay) {
+        buttonDarken.addEventListener('click', function () {
+            overlay.classList.toggle('overlay');
+        });
+    }
 });

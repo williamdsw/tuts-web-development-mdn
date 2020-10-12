@@ -1,4 +1,6 @@
 
+// Fields
+
 let selectWeather = null;
 let inputTemperature = null;
 let paragraph = null;
@@ -8,7 +10,9 @@ let selectMonth = null;
 let listDays = null;
 const now = new Date();
 
-(function () {
+// Event Listeners
+
+window.addEventListener('DOMContentLoaded', () => {
     selectWeather = document.querySelector('#selectWeather');
     inputTemperature = document.querySelector('#inputTemperature');
     paragraph = document.querySelector('p');
@@ -17,15 +21,23 @@ const now = new Date();
     selectMonth = document.querySelector('#selectMonth');
     listDays = document.querySelector('#days');
 
-    selectWeather.addEventListener('change', setWeather);
-    selectTheme.addEventListener('change', changeTheme);
-    selectMonth.addEventListener('change', buildCalendar);
-    selectMonth.value = now.getMonth() + 1;
-    
-    let event = new Event('change');
-    selectMonth.dispatchEvent(event);
+    if (selectWeather) {
+        selectWeather.addEventListener('change', setWeather);
+    }
 
-})();
+    if (selectTheme) {
+        selectTheme.addEventListener('change', changeTheme);    
+    }
+
+    if (selectMonth) {
+        selectMonth.addEventListener('change', buildCalendar);
+        selectMonth.value = now.getMonth() + 1;
+        let event = new Event('change');
+        selectMonth.dispatchEvent(event);
+    }
+});
+
+// Functions
 
 function setWeather() {
     const choice = selectWeather.value;
@@ -59,6 +71,8 @@ function changeTheme() {
 }
 
 function buildCalendar() {
+    if (!listDays) return;
+
     const choice = selectMonth.value;
 
     if (choice !== '') {

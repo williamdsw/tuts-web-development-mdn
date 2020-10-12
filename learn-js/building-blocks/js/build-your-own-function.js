@@ -1,13 +1,26 @@
 
+window.addEventListener('DOMContentLoaded', () => {
+    buildHtml();
+});
+
+
 function buildHtml() {
     
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('button2');
     const button3 = document.getElementById('button3');
 
-    button1.onclick = () => displayMessage('Wow, this is a different message!');
-    button2.onclick = () => displayMessage('Your inbox is almost full - delete some mails!', 'warning');
-    button3.onclick = () => displayMessage('Brian: hi there, how are you today?', 'chat');
+    if (button1) {
+        button1.onclick = () => displayMessage('Wow, this is a different message!');    
+    }
+
+    if (button2) {
+        button2.onclick = () => displayMessage('Your inbox is almost full - delete some mails!', 'warning');
+    }
+
+    if (button3) {
+        button3.onclick = () => displayMessage('Brian: hi there, how are you today?', 'chat');
+    }
 }
 
 function displayMessage(text, type) {
@@ -40,5 +53,3 @@ function displayMessage(text, type) {
         div.parentNode.removeChild(div);
     };
 }
-
-buildHtml();

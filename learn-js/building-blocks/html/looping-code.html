@@ -4,35 +4,51 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/looping-code.css">
-        <title> Lopping Code </title>
+        <title> Looping Code </title>
     </head>
     <body>
+        <header>
+            <h1> Looping Code: </h1>
+        </header>
 
-        <div>
-            <label for="inputNumber"> Type the number of circles: </label>
-            <input type="number" id="inputNumber">
-            <button type="button" id="buttonGenerate" disabled> Generate </button>
-        </div>
-
-        <canvas id="myCanvas" width="600" height="400"></canvas>
-
-        <hr>
-        <p id="cats"></p>
-
-        <hr>
-        <label for="inputSearch"> Search by contact name: </label>
-        <input type="search" id="inputSearch">
-        <button type="button" id="buttonSearch"> Search </button>
-
-        <p id="contacts"></p>
-
-        <hr>
-        <label for="inputOtherNumber"> Enter the number: </label>
-        <input type="number" id="inputOtherNumber">
-        <button type="button" id="buttonSquareRoot"> Generate Integer Squares </button>
-
-        <p id="output"></p>
+        <main>
+            <section>
+                <div>
+                    <label for="inputNumber"> Type the number of circles: </label>
+                    <input type="number" id="inputNumber">
+                    <button type="button" id="buttonGenerate" disabled> Generate </button>
+                </div>
         
+                <canvas id="myCanvas" width="600" height="400"></canvas>
+            </section>
+        
+            <hr>
+        
+            <section>
+                <p id="cats"></p>
+            </section>
+        
+            <hr>
+        
+            <section>
+                <label for="inputSearch"> Search by contact name: </label>
+                <input type="search" id="inputSearch">
+                <button type="button" id="buttonSearch"> Search </button>
+        
+                <p id="contacts"></p>
+            </section>
+        
+            <hr>
+        
+            <section>
+                <label for="inputOtherNumber"> Enter the number: </label>
+                <input type="number" id="inputOtherNumber">
+                <button type="button" id="buttonSquareRoot"> Generate Integer Squares </button>
+        
+                <p id="output"></p>
+            </section>
+        </main>
+
         <script src="../js/looping-code.js"></script>
     </body>
 </html>
