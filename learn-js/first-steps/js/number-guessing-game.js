@@ -22,64 +22,72 @@ document.addEventListener('DOMContentLoaded', () => {
     inputGuess = document.querySelector('#inputGuess');
     buttonReset = document.querySelector('#buttonReset');
 
-    buttonSubmitGuess.addEventListener('click', checkGuess);
+    if (buttonSubmitGuess) {
+        buttonSubmitGuess.addEventListener('click', checkGuess);
+    }
 });
 
 function checkGuess() {
-    const userGuess = Number(inputGuess.value);
-    guesses.push(userGuess);
+    if (inputGuess && divGuesses && divLastResult && divLowOrHi) {
+        const userGuess = Number(inputGuess.value);
+        guesses.push(userGuess);
 
-    divGuesses.textContent = `Previous guesses: ${guesses.join(', ')}`;
-    if (userGuess === randomNumber) {
-        divLastResult.textContent = 'Congratulations! Yo got it right!';
-        divLastResult.className = 'last-result success';
-        divLowOrHi.textContent = '';
-        setGameOver();
-    }
-    else if (guessCount === 10) {
-        divLastResult.textContent = '!!!GAME OVER!!!';
-        setGameOver();
-    }
-    else {
-        divLastResult.textContent = 'Wrong!';
-        divLastResult.className = 'last-result fail';
-        if (userGuess < randomNumber) {
-            divLowOrHi.textContent = 'Last guess was too low!';
+        divGuesses.textContent = `Previous guesses: ${guesses.join(', ')}`;
+        if (userGuess === randomNumber) {
+            divLastResult.textContent = 'Congratulations! Yo got it right!';
+            divLastResult.className = 'last-result success';
+            divLowOrHi.textContent = '';
+            setGameOver();
         }
-        else if (userGuess > randomNumber) {
-            divLowOrHi.textContent = 'Last guess was too high!';
+        else if (guessCount === 10) {
+            divLastResult.textContent = '!!!GAME OVER!!!';
+            setGameOver();
         }
-    }
+        else {
+            divLastResult.textContent = 'Wrong!';
+            divLastResult.className = 'last-result fail';
+            if (userGuess < randomNumber) {
+                divLowOrHi.textContent = 'Last guess was too low!';
+            }
+            else if (userGuess > randomNumber) {
+                divLowOrHi.textContent = 'Last guess was too high!';
+            }
+        }
 
-    guessCount++;
-    inputGuess.value = '';
-    inputGuess.focus();
+        guessCount++;
+        inputGuess.value = '';
+        inputGuess.focus();
+    }
 }
 
 function setGameOver(){
-    inputGuess.disabled = buttonSubmitGuess.disabled = true;
-    buttonReset = document.createElement('button');
-    buttonReset.textContent = 'Start new game';
-    document.body.append(buttonReset);
-    buttonReset.addEventListener('click', resetGame);
+    if (inputGuess && buttonSubmitGuess) {
+        inputGuess.disabled = buttonSubmitGuess.disabled = true;
+        buttonReset = document.createElement('button');
+        buttonReset.textContent = 'Start new game';
+        document.body.append(buttonReset);
+        buttonReset.addEventListener('click', resetGame);
+    }
 }
 
 function resetGame() {
-    guessCount = 1;
-    guesses = [];
+    if (buttonReset && inputGuess && divLastResult) {
+        guessCount = 1;
+        guesses = [];
 
-    const resetParagraphs = document.querySelectorAll('.result-parameters p');
-    for (const paragraph of resetParagraphs) {
-        paragraph.textContent = '';
+        const resetParagraphs = document.querySelectorAll('.result-parameters p');
+        for (const paragraph of resetParagraphs) {
+            paragraph.textContent = '';
+        }
+
+        buttonReset.parentNode.removeChild(buttonReset);
+
+        inputGuess.disabled = buttonSubmitGuess.disabled = false;
+        inputGuess.value = '';
+        inputGuess.focus();
+
+        divLastResult.className = 'last-result';
+
+        randomNumber = Math.floor(Math.random() * 100) + 1;
     }
-
-    buttonReset.parentNode.removeChild(buttonReset);
-
-    inputGuess.disabled = buttonSubmitGuess.disabled = false;
-    inputGuess.value = '';
-    inputGuess.focus();
-
-    divLastResult.className = 'last-result';
-
-    randomNumber = Math.floor(Math.random() * 100) + 1;
 }

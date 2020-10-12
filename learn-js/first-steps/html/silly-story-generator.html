@@ -8,22 +8,30 @@
         <title> Silly Store Generator </title>
     </head>
     <body>
-        <div>
-            <label for="inputCustomName"> Enter Custom Name: </label>
-            <input type="text" id="inputCustomName" placeholder="Bob">
-        </div>
-        <div>
-            <label for="inputRadioUS"> US </label>
-            <input type="radio" id="inputRadioUS" name="country" value="US" checked>
+        <header>
+            <h1> Silly Store Generator </h1>
+        </header>
 
-            <label for="inputRadioUK"> UK </label>
-            <input type="radio" id="inputRadioUK" name="country" value="UK">
-        </div>
-        <div>
-            <button class="randomize"> Generate random story </button>
-        </div>
-
-        <p class="story"></p>
+        <main>
+            <article>
+                <div>
+                    <label for="inputCustomName"> Enter Custom Name: </label>
+                    <input type="text" id="inputCustomName" placeholder="Bob">
+                </div>
+                <div>
+                    <label for="inputRadioUS"> US </label>
+                    <input type="radio" id="inputRadioUS" name="country" value="US" checked>
+        
+                    <label for="inputRadioUK"> UK </label>
+                    <input type="radio" id="inputRadioUK" name="country" value="UK">
+                </div>
+                <div>
+                    <button class="randomize"> Generate random story </button>
+                </div>
+        
+                <p class="story"></p>
+            </article>
+        </main>
 
         <script src="../js/silly-story-generator.js"></script>
     </body>

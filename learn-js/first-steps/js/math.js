@@ -1,5 +1,5 @@
 
-// FIELDS
+// Fields
 
 let myInteger = 5;
 let myFloat = 6.667;
@@ -13,24 +13,27 @@ let division = myInteger / 2;
 let modulus = myInteger % 2;
 let exponent = myInteger ** 2;
 
-// FUNCTIONS
+// Event Listeners
 
-(function(){
-    const p = document.createElement('p');
-    p.innerHTML += `myInteger: ${myInteger} <br>`;
-    p.innerHTML += `myFloat: ${myFloat} <br>`;
-    p.innerHTML += `typeof myInteger: ${typeof myInteger} <br>`;
-    p.innerHTML += `typeof myFloat: ${typeof myFloat} <br>`;
-    p.innerHTML += `myDecimal: ${myDecimal} <br>`;
-    p.innerHTML += `otherDecimal: ${otherDecimal} <br>`;
-    p.innerHTML += `myNumber: ${myNumber} <br>`;
-    p.innerHTML += `myNumber + 3: ${Number(myNumber) + 3} <br>`;
-    p.innerHTML += `sum: ${sum} <br>`;
-    p.innerHTML += `minus: ${minus} <br>`;
-    p.innerHTML += `multi: ${multi} <br>`;
-    p.innerHTML += `division: ${division} <br>`;
-    p.innerHTML += `modulus: ${modulus} <br>`;
-    p.innerHTML += `exponent: ${exponent} <br>`;
+window.addEventListener('DOMContentLoaded', () => {
+    const article = document.querySelector('article');
+    if (article) {
+        const p = document.createElement('p');
+        p.innerHTML += `myInteger: ${myInteger} <br>`;
+        p.innerHTML += `myFloat: ${myFloat} <br>`;
+        p.innerHTML += `typeof myInteger: ${typeof myInteger} <br>`;
+        p.innerHTML += `typeof myFloat: ${typeof myFloat} <br>`;
+        p.innerHTML += `myDecimal: ${myDecimal} <br>`;
+        p.innerHTML += `otherDecimal: ${otherDecimal} <br>`;
+        p.innerHTML += `myNumber: ${myNumber} <br>`;
+        p.innerHTML += `myNumber + 3: ${Number(myNumber) + 3} <br>`;
+        p.innerHTML += `sum: ${sum} <br>`;
+        p.innerHTML += `minus: ${minus} <br>`;
+        p.innerHTML += `multi: ${multi} <br>`;
+        p.innerHTML += `division: ${division} <br>`;
+        p.innerHTML += `modulus: ${modulus} <br>`;
+        p.innerHTML += `exponent: ${exponent} <br>`;
 
-    document.body.appendChild(p);
-})();
+        article.appendChild (p);
+    }
+});

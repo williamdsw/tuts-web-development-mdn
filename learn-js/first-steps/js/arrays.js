@@ -1,12 +1,7 @@
 
-// FIELDS
+// Fields
 
-let firstOutput = null;
 let secondOutput = null;
-let buttonPush = null;
-let buttonPop = null;
-let buttonUnshift = null;
-let buttonShift = null;
 let message = null;
 
 let products = ['bread', 'milk', 'cheese', 'hummus', 'noodles'];
@@ -18,36 +13,44 @@ let sameCities = cities.toString();
 
 let teams = ['PSG'];
 
-// FUNCTIONS
+// Event Listeners
+
 document.addEventListener('DOMContentLoaded', () => {
-    firstOutput = document.querySelector('output#first');
+    const firstOutput = document.querySelector('output#first');
     secondOutput = document.querySelector('output#second');
-    buttonPush = document.querySelector('#buttonPush');
-    buttonPop = document.querySelector('#buttonPop');
-    buttonUnshift = document.querySelector('#buttonUnshift');
-    buttonShift = document.querySelector('#buttonShift');
+    const buttonPush = document.querySelector('#buttonPush');
+    const buttonPop = document.querySelector('#buttonPop');
+    const buttonUnshift = document.querySelector('#buttonUnshift');
+    const buttonShift = document.querySelector('#buttonShift');
     message = document.querySelector('#message');
     const inputTeam = document.querySelector('#inputTeam');
 
-    printArray(products , firstOutput);
-    printArray(sequence, firstOutput);
-    printArray(random, firstOutput);
-    printArray(cities, firstOutput);
-    printArray(teams, secondOutput);
+    if (firstOutput && secondOutput) {
+        printArray(products , firstOutput);
+        printArray(sequence, firstOutput);
+        printArray(random, firstOutput);
+        printArray(cities, firstOutput);
+        printArray(teams, secondOutput);
+    }
 
     console.log('citiesStr:', citiesStr);
     console.log('sameCities:', sameCities);
 
-    inputTeam.addEventListener('input', () => {
-        let disabled = inputTeam.value.length === 0;
-        buttonPush.disabled = buttonUnshift.disabled = disabled;
-    });
-
-    buttonPush.addEventListener('click', () => push(inputTeam.value));
-    buttonPop.addEventListener('click', pop);
-    buttonUnshift.addEventListener('click', () => unshift(inputTeam.value));
-    buttonShift.addEventListener('click', shift);
+    if (inputTeam && buttonPush && buttonUnshift && buttonShift) {
+        inputTeam.addEventListener('input', function() {
+            const disabled = this.value.length === 0;
+            buttonPush.disabled = buttonUnshift.disabled = disabled;
+        });
+    
+        buttonPush.addEventListener('click', () => push(inputTeam.value));
+        buttonPop.addEventListener('click', pop);
+        buttonUnshift.addEventListener('click', () => unshift(inputTeam.value));
+        buttonShift.addEventListener('click', shift);
+    }
+    
 });
+
+// Functions
 
 function printArray(array, output) {
 
@@ -60,6 +63,8 @@ function printArray(array, output) {
 }
 
 function push(value) {
+    if (!message) return;
+
     value = value.trim();
 
     if (teams.indexOf(value) === -1) {
@@ -70,6 +75,7 @@ function push(value) {
 }
 
 function pop() {
+    if (!message) return;
     if (teams.length === 0) return;
 
     const value = teams.pop();
@@ -78,6 +84,8 @@ function pop() {
 }
 
 function unshift(value) {
+    if (!message) return;
+
     value = value.trim();
     
     if (teams.indexOf(value) === -1) {
@@ -88,6 +96,7 @@ function unshift(value) {
 }
 
 function shift() {
+    if (!message) return;
     if (teams.length === 0) return;
 
     const value = teams.shift();

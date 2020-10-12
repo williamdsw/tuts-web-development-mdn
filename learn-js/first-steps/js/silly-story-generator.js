@@ -1,5 +1,5 @@
 
-// FIELDS
+// Fields
 
 let inputCustomName = null;
 let inputRadioUS = null;
@@ -12,45 +12,51 @@ const places = ['the soup kitchen', 'Disneyland', 'the White House'];
 const actions = ['spontaneously combusted', 'melted into a puddle on the sidewalk', 'turned into a slug and crawled away'];
 const story = 'It was :weight: outside, so :name: went for a walk. When they got to :place:, they stared in horror for a few moments, then :action:. :custom_name: saw the whole thing, but was not surprised — :name: weights :temperature:, and it was a hot day.';
 
-// FUNCTIONS
+// Event Listeners
 
 document.addEventListener('DOMContentLoaded', () => {
-    inputCustomName = document.getElementById('inputCustomName');
-    inputRadioUS = document.getElementById('inputRadioUS');
-    inputRadioUK = document.getElementById('inputRadioUK');
+    inputCustomName = document.querySelector('#inputCustomName');
+    inputRadioUS = document.querySelector('#inputRadioUS');
+    inputRadioUK = document.querySelector('#inputRadioUK');
     buttonRandomize = document.querySelector('.randomize');
     paragraphStory = document.querySelector('.story');
 
-    buttonRandomize.addEventListener('click', generateStory);
+    if (buttonRandomize) {
+        buttonRandomize.addEventListener('click', generateStory);
+    }
 });
+
+// Helper Functions
 
 function generateStory() {
 
-    const name = getRandomValueFromArray(names);
-    const place = getRandomValueFromArray(places);
-    const action = getRandomValueFromArray(actions);
-    const customName = (inputCustomName.value !== '' ? inputCustomName.value : 'Bob');
+    if (inputCustomName && inputRadioUK && inputRadioUS && paragraphStory) {
+        const name = getRandomValueFromArray(names);
+        const place = getRandomValueFromArray(places);
+        const action = getRandomValueFromArray(actions);
+        const customName = (inputCustomName.value !== '' ? inputCustomName.value : 'Bob');
 
-    let weight = '';
-    let temperature = '';
-    if (inputRadioUK.checked) {
-        weight = Math.round(300 * 0.0714286) + ' stone'
-        temperature = Math.round((94 - 32) * (5 / 9)) + ' centigrade';
+        let weight = '';
+        let temperature = '';
+        if (inputRadioUK.checked) {
+            weight = Math.round(300 * 0.0714286) + ' stone'
+            temperature = Math.round((94 - 32) * (5 / 9)) + ' centigrade';
+        }
+        else if (inputRadioUS.checked) {
+            weight = '94 fahrenheit';
+            temperature = '300 pounds';
+        }
+
+        let newStory = story.replace(/:name:/g, name);
+        newStory = newStory.replace(/:place:/g, place);
+        newStory = newStory.replace(/:action:/g, action);
+        newStory = newStory.replace(/:custom_name:/g, customName);
+        newStory = newStory.replace(/:weight:/g, weight);
+        newStory = newStory.replace(/:temperature:/g, temperature);
+
+        paragraphStory.textContent = newStory;
+        paragraphStory.style.visibility = 'visible';
     }
-    else if (inputRadioUS) {
-        weight = '94 fahrenheit';
-        temperature = '300 pounds';
-    }
-
-    let newStory = story.replace(/:name:/g, name);
-    newStory = newStory.replace(/:place:/g, place);
-    newStory = newStory.replace(/:action:/g, action);
-    newStory = newStory.replace(/:custom_name:/g, customName);
-    newStory = newStory.replace(/:weight:/g, weight);
-    newStory = newStory.replace(/:temperature:/g, temperature);
-
-    paragraphStory.textContent = newStory;
-    paragraphStory.style.visibility = 'visible';
 }
 
 function getRandomValueFromArray(array) {
