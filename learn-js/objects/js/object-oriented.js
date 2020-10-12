@@ -32,39 +32,45 @@ function Person (firstName, lastName, age, gender, interests) {
 }
 
 window.addEventListener('DOMContentLoaded', function (){
-    inputFirstName = document.getElementById('inputFirstName');
-    inputLastName = document.getElementById('inputLastName');
-    inputAge = document.getElementById('inputAge');
-    selectGender = document.getElementById('selectGender');
-    inputInterests = document.getElementById('inputInterests');
+    inputFirstName = document.querySelector('#inputFirstName');
+    inputLastName = document.querySelector('#inputLastName');
+    inputAge = document.querySelector('#inputAge');
+    selectGender = document.querySelector('#selectGender');
+    inputInterests = document.querySelector('#inputInterests');
     form = document.querySelector('form');
     submit = document.querySelector('#buttonSubmit');
     output = document.querySelector('#output');
     const button = document.querySelector('#buttonCreatePerson');
 
-    button.addEventListener('click', validateForm);
+    if (button) {
+        button.addEventListener('click', validateForm);
+    }
+    
 });
 
 function validateForm() {
-    if (form.checkValidity()) {
-        const person = new Person(inputFirstName.value, inputLastName.value, inputAge.value, selectGender.value, inputInterests.value.split(','));
-        output.textContent = person.bio();
-        person.greeting();
-
-        // Other ways to create objects
-        const other = new Object({
-            name: { first: inputFirstName.value, last: inputLastName.value },
-            age: parseInt(inputAge.value),
-            gender: selectGender.value,
-            interests: inputInterests.value.split(',')
-        });
-
-        const another = Object.create(other);
-
-        console.log('other', other);
-        console.log('another', another);
-    }
-    else {
-        submit.click();
+    if (form && output && inputFirstName && inputLastName && inputAge && 
+        selectGender && inputInterests && output) {
+        if (form.checkValidity()) {
+            const person = new Person(inputFirstName.value, inputLastName.value, inputAge.value, selectGender.value, inputInterests.value.split(','));
+            output.textContent = person.bio();
+            person.greeting();
+    
+            // Other ways to create objects
+            const other = new Object({
+                name: { first: inputFirstName.value, last: inputLastName.value },
+                age: parseInt(inputAge.value),
+                gender: selectGender.value,
+                interests: inputInterests.value.split(',')
+            });
+    
+            const another = Object.create(other);
+    
+            console.log('other', other);
+            console.log('another', another);
+        }
+        else {
+            submit.click();
+        }
     }
 }

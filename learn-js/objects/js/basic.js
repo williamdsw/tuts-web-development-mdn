@@ -22,12 +22,17 @@ const person = {
 };
 
 window.addEventListener('DOMContentLoaded', () => {
-    const info = document.getElementById('info');
+    const info = document.querySelector('#info');
     const buttonGreeting = document.querySelector('button');
 
     console.log ('person', person);
 
-    info.textContent = person.bio();
-    info.textContent += person.otherInfo();
-    buttonGreeting.addEventListener('click', () => { person.greeting (); });
+    if (info) {
+        info.textContent = person.bio();
+        info.textContent += person.otherInfo();
+    }
+
+    if (buttonGreeting) {
+        buttonGreeting.addEventListener('click', () => person.greeting ());
+    }
 });

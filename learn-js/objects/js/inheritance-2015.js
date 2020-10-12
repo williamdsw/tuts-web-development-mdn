@@ -43,15 +43,19 @@ window.addEventListener('DOMContentLoaded', () => {
     const output5 = document.getElementById('output5');
     const output6 = document.getElementById('output6');
 
-    const person = new AnotherPerson('Jared', 'Leto', 44, 'Male', ['Rock', 'Cinema', 'Space']);
-    output3.innerText = person.greeting();
-    output4.innerText = person.farewell();
+    if (output3 && output4) {
+        const person = new AnotherPerson('Jared', 'Leto', 44, 'Male', ['Rock', 'Cinema', 'Space']);
+        output3.innerText = person.greeting();
+        output4.innerText = person.farewell();
+    }
 
-    const teacher = new AnotherTeacher('David', 'Coverdale', 67, 'Male', ['Classic Music', 'Cars'], 'Vocals', 'Music');
-    output5.innerText = teacher.greeting();
-    output6.innerText = teacher.farewell();
+    if (output5 && output6) {
+        const teacher = new AnotherTeacher('David', 'Coverdale', 67, 'Male', ['Classic Music', 'Cars'], 'Vocals', 'Music');
+        output5.innerText = teacher.greeting();
+        output6.innerText = teacher.farewell();
 
-    console.log('old subject: ', teacher.subject);
-    teacher.subject = 'Other';
-    console.log('new subject: ', teacher.subject);
+        console.log('old subject: ', teacher.subject);
+        teacher.subject = 'Other';
+        console.log('new subject: ', teacher.subject);
+    }
 });

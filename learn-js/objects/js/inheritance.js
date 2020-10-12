@@ -66,12 +66,14 @@ window.addEventListener('DOMContentLoaded', function (){
     const output1 = document.getElementById('output1');
     const output2 = document.getElementById('output2');
 
-    const teacher = new Teacher('Dave', 'Mustaine', 33, 'Male', 'Metallica, Old Metal, Baseball'.split(','), 'Guitar');
-    const student = new Student('Kirk', 'Hammett', 28, 'Male', 'Metallica, Joe Satriani, Horror Movies'.split(','));
+    if (output1 && output2) {
+        const teacher = new Teacher('Dave', 'Mustaine', 33, 'Male', 'Metallica, Old Metal, Baseball'.split(','), 'Guitar');
+        const student = new Student('Kirk', 'Hammett', 28, 'Male', 'Metallica, Joe Satriani, Horror Movies'.split(','));
 
-    output1.innerText = teacher.greeting();
-    output2.innerText = student.greeting();
+        output1.innerText = teacher.greeting();
+        output2.innerText = student.greeting();
 
-    console.log('teacher', teacher);
-    console.log('student', student);
+        console.log('teacher', teacher);
+        console.log('student', student);
+    }
 });

@@ -7,62 +7,76 @@
         <style> .hidden { display: none; } </style>
     </head>
     <body>
+        <header>
+            <h1> Working With Json </h1>
+        </header>
 
-        <h3> Loading from JSON... </h3>
-        <button type="button" id="buttonLoadJson"> Load from JSON File </button>
-        <p id="jsonError"></p>
+        <main>
+            <section>
+                <header>
+                    <h2> Loading from JSON... </h2>
+                </header>
+            
+                <button type="button" id="buttonLoadJson"> Load from JSON File </button>
+                <p id="jsonError"></p>
+            
+                <div class="hidden">
+                    <label> Name: </label>
+                    <input type="text" id="inputName" readonly disabled>
+            
+                    <label> Country: </label>
+                    <input type="text" id="inputCountry" readonly disabled>
+            
+                    <label> Stadium: </label>
+                    <input type="text" id="inputStadium" readonly disabled>
+            
+                    <label> Capacity: </label>
+                    <input type="number" id="inputCapacity" readonly disabled>
+            
+                    <label> Founded: </label>
+                    <input type="number" id="inputFounded" readonly disabled>
+            
+                    <br /><br />
+            
+                    <div>
+                        <table id="tableBestPlayers">
+                            <thead>
+                                <tr>
+                                    <td> Nº </td>
+                                    <td> Position </td>
+                                    <td> Nation </td>
+                                    <td> Player </td>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
 
-        <div class="hidden">
-            <label> Name: </label>
-            <input type="text" id="inputName" readonly disabled>
+            <hr/>
 
-            <label> Country: </label>
-            <input type="text" id="inputCountry" readonly disabled>
-
-            <label> Stadium: </label>
-            <input type="text" id="inputStadium" readonly disabled>
-
-            <label> Capacity: </label>
-            <input type="number" id="inputCapacity" readonly disabled>
-
-            <label> Founded: </label>
-            <input type="number" id="inputFounded" readonly disabled>
-
-            <br/><br/>
-
-            <div>
-                <table id="tableBestPlayers">
-                    <thead>
-                        <tr>
-                            <td> Nº </td>
-                            <td> Position </td>
-                            <td> Nation </td>
-                            <td> Player </td>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
-        </div>
-
-        <hr/>
-
-        <h3> Data To JSON... </h3>
-
-        <div>
-            <label> First Name: </label>
-            <input type="text" id="inputFirstName">
-
-            <label> Last Name: </label>
-            <input type="text" id="inputLastName">
-
-            <label> Age: </label>
-            <input type="number" id="inputAge">
-
-            <button type="button" id="buttonGenerate"> Generate </button>
-        </div>
-
-        <p id="jsonOutput"></p>
+            <section>
+                <header>
+                    <h2> Data To JSON... </h2>
+                </header>
+            
+                <div>
+                    <label> First Name: </label>
+                    <input type="text" id="inputFirstName">
+            
+                    <label> Last Name: </label>
+                    <input type="text" id="inputLastName">
+            
+                    <label> Age: </label>
+                    <input type="number" id="inputAge">
+            
+                    <button type="button" id="buttonGenerate"> Generate </button>
+                </div>
+            
+                <p id="jsonOutput"></p>
+            </section>
+        </main>
 
         <script src="../js/working-with-json.js"></script>
     </body>

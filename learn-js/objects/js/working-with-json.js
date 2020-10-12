@@ -26,15 +26,19 @@ class Person {
 
 window.addEventListener('DOMContentLoaded', () => {
 
-    const buttonLoadJson = document.getElementById('buttonLoadJson');
-    const buttonGenerate = document.getElementById('buttonGenerate');
+    const buttonLoadJson = document.querySelector('#buttonLoadJson');
+    const buttonGenerate = document.querySelector('#buttonGenerate');
 
-    buttonLoadJson.addEventListener('click', () => {
-        buttonLoadJson.disabled = true;
-        loadJSON('../../json/team.json');
-    });
+    if (buttonLoadJson) {
+        buttonLoadJson.addEventListener('click', function() {
+            this.disabled = true;
+            loadJSON('../../../json/team.json');
+        });
+    }
 
-    buttonGenerate.addEventListener('click', dataToJSON);
+    if (buttonGenerate) {
+        buttonGenerate.addEventListener('click', dataToJSON);
+    }
 });
 
 function loadJSON (url) {
@@ -78,41 +82,48 @@ function loadJSON (url) {
 
 function dealWithContent(content) {
 
-    const jsonError = document.getElementById('jsonError');
+    const jsonError = document.querySelector('#jsonError');
     const divInfo = document.querySelector('.hidden');
 
-    if (typeof(content) === 'string') {
-        jsonError.textContent = content;
-    }
-    else {
-        jsonError.textContent = '';
-        divInfo.classList.toggle('hidden');
+    if (jsonError && divInfo) {
+        if (typeof(content) === 'string') {
+            jsonError.textContent = content;
+        }
+        else {
+            jsonError.textContent = '';
+            divInfo.classList.toggle('hidden');
+    
+            const inputName = document.querySelector('#inputName');
+            const inputCountry = document.querySelector('#inputCountry');
+            const inputStadium = document.querySelector('#inputStadium');
+            const inputCapacity = document.querySelector('#inputCapacity');
+            const inputFounded = document.querySelector('#inputFounded');
+            const tableBestPlayers = document.querySelector('#tableBestPlayers tbody');
 
-        const inputName = document.getElementById('inputName');
-        const inputCountry = document.getElementById('inputCountry');
-        const inputStadium = document.getElementById('inputStadium');
-        const inputCapacity = document.getElementById('inputCapacity');
-        const inputFounded = document.getElementById('inputFounded');
-        const tableBestPlayers = document.querySelector('#tableBestPlayers tbody');
+            if (inputName && inputCountry && inputStadium && inputCapacity &&
+                inputFounded && tableBestPlayers) {
 
-        inputName.value = (content.name !== undefined ? content.name : '');
-        inputCountry.value = (content.country !== undefined ? content.country : '');
-        inputStadium.value = (content.stadium !== undefined ? content.stadium : '');
-        inputCapacity.value = (content.capacity !== undefined ? content.capacity.toFixed(3) : '');
-        inputFounded.value = (content.founded !== undefined ? content.founded : '');
+                inputName.value = (content.name ? content.name : '');
+                inputCountry.value = (content.country ? content.country : '');
+                inputStadium.value = (content.stadium ? content.stadium : '');
+                inputCapacity.value = (content.capacity ? content.capacity.toFixed(3) : '');
+                inputFounded.value = (content.founded ? content.founded : '');
 
-        if (content.bestPlayers !== undefined) {
-            for (const player of content.bestPlayers) {
-                let row = 
-                `<tr>
-                    <td> ${player.number !== undefined ? player.number : ''} </td>
-                    <td> ${player.position !== undefined ? player.position : ''} </td>
-                    <td> ${player.nation !== undefined ? player.nation : ''} </td>
-                    <td> ${player.player !== undefined ? player.player : ''} </td>
-                 </tr>
-                `;
+                if (content.bestPlayers) {
+                    for (const player of content.bestPlayers) {
+                        let row =
+                            `<tr>
+                                <td> ${player.number ? player.number : ''} </td>
+                                <td> ${player.position ? player.position : ''} </td>
+                                <td> ${player.nation ? player.nation : ''} </td>
+                                <td> ${player.player ? player.player : ''} </td>
+                             </tr>
+                            `;
 
-                tableBestPlayers.innerHTML += row;
+                        tableBestPlayers.innerHTML += row;
+                    }
+                }
+
             }
         }
     }
@@ -120,24 +131,26 @@ function dealWithContent(content) {
 
 function dataToJSON () {
 
-    const inputFirstName = document.getElementById('inputFirstName');
-    const inputLastName = document.getElementById('inputLastName');
-    const inputAge = document.getElementById('inputAge');
-    const jsonOutput = document.getElementById('jsonOutput');
+    const inputFirstName = document.querySelector('#inputFirstName');
+    const inputLastName = document.querySelector('#inputLastName');
+    const inputAge = document.querySelector('#inputAge');
+    const jsonOutput = document.querySelector('#jsonOutput');
 
-    const person = new Person();
-    if (inputFirstName.value !== '' && inputLastName.value !== '') {
-        person.name = {
-            first: inputFirstName.value,
-            last: inputLastName.value,
-        };
+    if (inputFirstName && inputLastName && inputAge && jsonOutput) {
+        const person = new Person();
+        if (inputFirstName.value !== '' && inputLastName.value !== '') {
+            person.name = {
+                first: inputFirstName.value,
+                last: inputLastName.value,
+            };
+        }
+        else {
+            person.name = { first: 'Robert', last: 'Smith' };
+        }
+
+        person.age = (inputAge.value !== '' ? inputAge.value : 30);
+
+        const json = JSON.stringify(person);
+        jsonOutput.textContent = json;
     }
-    else {
-        person.name = { first: 'Robert', last: 'Smith' };
-    }
-
-    person.age = (inputAge.value !== '' ? inputAge.value : 30);
-
-    const json = JSON.stringify(person);
-    jsonOutput.textContent = json;
 }

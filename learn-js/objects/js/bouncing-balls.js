@@ -195,7 +195,7 @@ function generateBalls () {
         ballCount++;
     }
 
-    if (paragraph !== null) {
+    if (paragraph) {
         paragraph.textContent = `Ball Count: ${ballCount}`;
     }
 }

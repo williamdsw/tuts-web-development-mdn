@@ -6,36 +6,44 @@
         <title> Object Oriented </title>
     </head>
     <body>
+        <header>
+            <h1> Object Oriented </h1>
+        </header>
 
-        <form>
-            <div>
-                <label for="inputFirstName"> First Name: </label>
-                <input type="text" id="inputFirstName" required>
-                
-                <label for="inputLastName"> Last Name: </label>
-                <input type="text" id="inputLastName" required>
-    
-                <label for="inputAge"> Age: </label>
-                <input type="number" id="inputAge" required>
-            </div>
-            <br>
-            <div>
-                <label for="selectGender"> Gender: </label>
-                <select id="selectGender" required>
-                    <option value="Male"> Male </option>
-                    <option value="Female"> Female </option>
-                </select>
-    
-                <label for="inputInterests"> Interests (separated by comma): </label>
-                <input type="text" id="inputInterests" required>
-    
-                <button type="submit" id="buttonSubmit" style="display: none;"> Submit </button>
-                <button type="button" id="buttonCreatePerson"> Create Person </button>
-            </div>
-        </form>
-
-        <p id="output"> Output: </p>
-
+        <main>
+            <article>
+                <form>
+                    <div>
+                        <label for="inputFirstName"> First Name: </label>
+                        <input type="text" id="inputFirstName" required>
+                        
+                        <label for="inputLastName"> Last Name: </label>
+                        <input type="text" id="inputLastName" required>
+            
+                        <label for="inputAge"> Age: </label>
+                        <input type="number" id="inputAge" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="selectGender"> Gender: </label>
+                        <select id="selectGender" required>
+                            <option value="Male"> Male </option>
+                            <option value="Female"> Female </option>
+                        </select>
+            
+                        <label for="inputInterests"> Interests (separated by comma): </label>
+                        <input type="text" id="inputInterests" required>
+            
+                        <button type="submit" id="buttonSubmit" style="display: none;"> Submit </button>
+                        <button type="button" id="buttonCreatePerson"> Create Person </button>
+                    </div>
+                </form>
+        
+                <p id="output"> Output: </p>
+        
+            </article>
+        </main>
+        
         <script src="../js/object-oriented.js"></script>
     </body>
 </html>
