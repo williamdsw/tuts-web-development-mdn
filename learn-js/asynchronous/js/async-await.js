@@ -7,11 +7,13 @@ window.addEventListener('DOMContentLoaded', () => {
     hi().then(console.log);
 
     const button = document.querySelector('button');
-    button.addEventListener('click', () => {
-        loadImage()
-        .catch(e => console.log ('Some error: ', e.message))
-        .finally(() => console.log('Finally!'));
-    });
+    if (button) {
+        button.addEventListener('click', () => {
+            loadImage()
+            .catch(e => console.log ('Some error: ', e.message))
+            .finally(() => console.log('Finally!'));
+        });
+    }
 });
 
 // convert to a Promise (then, catch)

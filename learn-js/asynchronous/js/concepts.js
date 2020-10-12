@@ -6,22 +6,29 @@ window.addEventListener('DOMContentLoaded', function () {
     const buttonRunTaskAsync = document.querySelector('#buttonRunTaskAsync');
     const worker = new Worker('../../../js/learn-js/asynchronous/run-task.js');
 
-    worker.onmessage = function(ev) {
-        console.log('worker.onmessage = ', ev.data);
+    if (worker) {
+        worker.onmessage = function(ev) {
+            console.log('worker.onmessage = ', ev.data);
+            
+            let p = document.createElement('p');
+            p.textContent = `Created after ${ev.data.result} ms of click!`;
+            document.body.appendChild(p);
+        }
+    
+        if (buttonRunTask) {
+            buttonRunTask.addEventListener('click', runTask);
+        }
+    
+        if (buttonRunTaskAsync) {
+            buttonRunTaskAsync.addEventListener('click', () => {
+                worker.postMessage('Go!');
         
-        let p = document.createElement('p');
-        p.textContent = `Created after ${ev.data.result} ms of click!`;
-        document.body.appendChild(p);
+                let p = document.createElement('p');
+                p.textContent = `Created on click!`;
+                document.body.appendChild(p);
+            });
+        }
     }
-
-    buttonRunTask.addEventListener('click', runTask);
-    buttonRunTaskAsync.addEventListener('click', () => {
-        worker.postMessage('Go!');
-
-        let p = document.createElement('p');
-        p.textContent = `Created on click!`;
-        document.body.appendChild(p);
-    });
 });
 
 function runTask() {

@@ -11,8 +11,8 @@ let boxAnimationFrame = null;
 // FUNCTIONS
 
 window.addEventListener('DOMContentLoaded', () => {
-    greeting = document.getElementById('greeting');
-    today = document.getElementById('today');
+    greeting = document.querySelector('#greeting');
+    today = document.querySelector('#today');
     const button = document.querySelector('button');
     const buttonModifyBox = document.querySelector('#buttonModifyBox');
     const buttonStopBox = document.querySelector('#buttonStopBox');
@@ -21,39 +21,49 @@ window.addEventListener('DOMContentLoaded', () => {
     greetingTimeout = setTimeout(sayHi, 2000, 'Mr. Universe');
     clockInterval = setInterval(displayTime, 1000);
 
-    button.addEventListener('click', () => {
-        if (greetingTimeout !== null) {
-            clearTimeout(greetingTimeout);
-        }
+    if (button) {
+        button.addEventListener('click', () => {
+            if (greetingTimeout !== null) {
+                clearTimeout(greetingTimeout);
+            }
+    
+            if (clockInterval !== null) {
+                clearInterval(clockInterval);
+            }
+        });
+    }
 
-        if (clockInterval !== null) {
-            clearInterval(clockInterval);
-        }
-    });
-
-    buttonModifyBox.addEventListener('click', modifyBox);
-
-    buttonStopBox.addEventListener('click', () => {
-        if (boxAnimationFrame !== null) {
-            cancelAnimationFrame(boxAnimationFrame);
-        }
-    });
+    if (buttonModifyBox) {
+        buttonModifyBox.addEventListener('click', modifyBox);
+    }
+    
+    if (buttonStopBox) {
+        buttonStopBox.addEventListener('click', () => {
+            if (boxAnimationFrame) {
+                cancelAnimationFrame(boxAnimationFrame);
+            }
+        });
+    }
 });
 
 function sayHi(who) {
-    const greeting = document.getElementById('greeting');
-    greeting.textContent = `Hello, ${who}`;
+    const greeting = document.querySelector('#greeting');
+    if (greeting) {
+        greeting.textContent = `Hello, ${who}`;
+    }
 }
 
 function displayTime() {
     const date = new Date();
     const time = date.toLocaleTimeString();
-    today.textContent = time;
+    if (today) {
+        today.textContent = time;
+    }
 }
 
 function modifyBox() {
    
-    if (box !== null) {
+    if (box) {
         const r = random(0, 255);
         const g = random(0, 255);
         const b = random(0, 255);

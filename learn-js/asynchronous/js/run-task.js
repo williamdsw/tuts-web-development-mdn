@@ -1,5 +1,4 @@
 
-
 onmessage = function () {
     const start = performance.now();
 

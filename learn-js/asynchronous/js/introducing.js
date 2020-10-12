@@ -10,21 +10,27 @@ window.addEventListener('DOMContentLoaded', () => {
     const buttonLoadImageFetch = document.getElementById('buttonLoadImageFetch');
     const inputFiles = document.querySelector('input');
 
-    buttonLoadImageRequest.addEventListener('click', () => {
-        loadAssetRequest(COFFEE_JPG_PATH, 'blob', displayImage);
-    });
+    if (buttonLoadImageRequest) {
+        buttonLoadImageRequest.addEventListener('click', () => {
+            loadAssetRequest(COFFEE_JPG_PATH, 'blob', displayImage);
+        });
+    }
 
-    buttonLoadImageFetch.addEventListener('click', () => {
-        loadAssetFetch(COFFEE_JPG_PATH, displayImage);
-    });
+    if (buttonLoadImageFetch) {
+        buttonLoadImageFetch.addEventListener('click', () => {
+            loadAssetFetch(COFFEE_JPG_PATH, displayImage);
+        });
+    }
 
-    inputFiles.addEventListener('change', () => {
-        if (inputFiles.files.length !== 0) {
-            for (const file of inputFiles.files) {
-                displayImage(file);
+    if (inputFiles) {
+        inputFiles.addEventListener('change', () => {
+            if (inputFiles.files.length !== 0) {
+                for (const file of inputFiles.files) {
+                    displayImage(file);
+                }
             }
-        }
-    });
+        });
+    }
 
     const gods = ['Apollo', 'Artemis', 'Ares', 'Zeus'];
 

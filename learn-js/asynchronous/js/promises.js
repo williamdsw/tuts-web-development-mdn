@@ -3,23 +3,25 @@
 
 let status = null;
 let staticImage = null;
-let error = null;
+let errorMessage = null;
 
 // FUNCTIONS
 
 window.addEventListener('DOMContentLoaded', () => {
-    status = document.getElementById('status');
-    staticImage = document.getElementById('staticImage');
-    error = document.getElementById('error');
-    const buttonCall = document.getElementById('buttonCall');
-    const buttonLoadImage = document.getElementById('buttonLoadImage');
+    status = document.querySelector('#status');
+    staticImage = document.querySelector('#staticImage');
+    errorMessage = document.querySelector('#error');
+    const buttonCall = document.querySelector('#buttonCall');
+    const buttonLoadImage = document.querySelector('#buttonLoadImage');
 
-    buttonCall.addEventListener('click', handleCallButton);
-    buttonLoadImage.addEventListener('click', loadImage);
+    if (buttonCall && buttonLoadImage) {
+        buttonCall.addEventListener('click', handleCallButton);
+        buttonLoadImage.addEventListener('click', loadImage);
+    }
 });
 
 function setStatusMessage (message) {
-    if (status !== null) {
+    if (status) {
         status.textContent = message;
     }
 }
@@ -52,14 +54,14 @@ function loadImage() {
 }
 
 function setImage(blob) {
-    if (staticImage !== null) {
+    if (staticImage && blob) {
         const objectURL = URL.createObjectURL(blob);
         staticImage.src = objectURL;
     }
 }
 
 function setError(message) {
-    if (error !== null) {
-        error.textContent = message;
+    if (errorMessage) {
+        errorMessage.textContent = message;
     }
 }
