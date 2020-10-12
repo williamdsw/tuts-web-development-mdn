@@ -3,7 +3,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const buttonAdd = document.querySelector('button');
     const list = document.querySelector('ul');
     const input = document.querySelector('#inputItem');
-    buttonAdd.addEventListener('click', () => addItem (list, input));
+
+    if (buttonAdd && list && input) {
+        buttonAdd.addEventListener('click', () => addItem (list, input));
+    }
 });
 
 function addItem(ul, input) {

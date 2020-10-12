@@ -48,16 +48,18 @@ function initialize() {
     const buttonSearch = document.querySelector('button');
     main = document.querySelector('main');
 
-    lastCategory = selectCategory.value;
-    finalGroup = products;
-    updateDisplay();
+    if (selectCategory && inputSearchTerm && buttonSearch) {
+        lastCategory = selectCategory.value;
+        finalGroup = products;
+        updateDisplay();
 
-    categoryGroup = finalGroup = [];
+        categoryGroup = finalGroup = [];
 
-    buttonSearch.addEventListener('click', (ev) => {
-        searchTerm = inputSearchTerm.value;
-        chooseCategory(ev, selectCategory.value);
-    });
+        buttonSearch.addEventListener('click', (ev) => {
+            searchTerm = inputSearchTerm.value;
+            chooseCategory(ev, selectCategory.value);
+        });
+    }
 }
 
 function chooseCategory(ev, value) {
@@ -106,17 +108,19 @@ function selectProducts() {
 }
 
 function updateDisplay() {
-    while (main.firstChild) {
-        main.removeChild(main.firstChild);
-    }
-
-    if (finalGroup.length === 0) {
-        const paragraph = document.createElement('p');
-        paragraph.textContent = 'No results to display!';
-        main.appendChild(paragraph);
-    }
-    else {
-        finalGroup.forEach(product => fetchBlob(product));
+    if (main) {
+        while (main.firstChild) {
+            main.removeChild(main.firstChild);
+        }
+    
+        if (finalGroup.length === 0) {
+            const paragraph = document.createElement('p');
+            paragraph.textContent = 'No results to display!';
+            main.appendChild(paragraph);
+        }
+        else {
+            finalGroup.forEach(product => fetchBlob(product));
+        }
     }
 }
 

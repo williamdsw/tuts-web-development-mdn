@@ -23,147 +23,155 @@ window.addEventListener('DOMContentLoaded', () => {
     const timerDuration = document.querySelector('.timer span.duration');
     const timerBar = document.querySelector('.timer div');
 
-    video.removeAttribute('controls');
-    controls.style.visibility = 'visible';
-    timerDuration.textContent = getFormattedTime(video.duration);
+    if (player && video && controls) {
+        if (playButton && stopButton && muteButton && backwardButton && forwardButton && fullScreenButton) {
+            if (timerWrapper && timerCurrent && timerDuration && timerBar) {
 
-    console.log('video', video);
+                video.removeAttribute('controls');
+                controls.style.visibility = 'visible';
+                timerDuration.textContent = getFormattedTime(video.duration);
 
-    // Event Listeners
-    playButton.addEventListener('click', playOrPause);
-    stopButton.addEventListener('click', stop);
-    muteButton.addEventListener('click', toggleMute);
-    backwardButton.addEventListener('click', backward);
-    forwardButton.addEventListener('click', forward);
-    fullScreenButton.addEventListener('click', toggleFullScreen);
+                console.log('video', video);
 
-    video.addEventListener('ended', stop);
-    video.addEventListener('timeupdate', updateTime);
+                // Event Listeners
+                playButton.addEventListener('click', playOrPause);
+                stopButton.addEventListener('click', stop);
+                muteButton.addEventListener('click', toggleMute);
+                backwardButton.addEventListener('click', backward);
+                forwardButton.addEventListener('click', forward);
+                fullScreenButton.addEventListener('click', toggleFullScreen);
 
-    // Inner functions 
+                video.addEventListener('ended', stop);
+                video.addEventListener('timeupdate', updateTime);
 
-    function playOrPause() {
-        clearIntervals();
+                // Inner functions 
 
-        if (video.paused) {
-            playButton.setAttribute('data-icon', 'u');
-            playButton.setAttribute('title', 'pause');
-            video.play();
-        }
-        else {
-            playButton.setAttribute('data-icon', 'P');
-            playButton.setAttribute('title', 'play');
-            video.pause();
-        }
-    }
+                function playOrPause() {
+                    clearIntervals();
 
-    function stop() {
-        video.pause();
-        video.currentTime = 0;
-        playButton.setAttribute('data-icon', 'P');
-        clearIntervals();
-    }
-
-    function backward() {
-        clearInterval(forwardInterval);
-        forwardButton.classList.remove('active');
-
-        if (backwardButton.classList.contains('active')) {
-            backwardButton.classList.remove('active');
-            clearInterval(backwardInterval);
-            video.play();
-        }
-        else {
-            backwardButton.classList.add('active');
-            video.pause();
-            backwardInterval = setInterval(() => {
-                if (video.currentTime <= 3) {
-                    stop();
+                    if (video.paused) {
+                        timerDuration.textContent = getFormattedTime(video.duration);
+                        playButton.setAttribute('data-icon', 'u');
+                        playButton.setAttribute('title', 'pause');
+                        video.play();
+                    }
+                    else {
+                        playButton.setAttribute('data-icon', 'P');
+                        playButton.setAttribute('title', 'play');
+                        video.pause();
+                    }
                 }
-                else {
-                    video.currentTime -= 3;
+
+                function stop() {
+                    video.pause();
+                    video.currentTime = 0;
+                    playButton.setAttribute('data-icon', 'P');
+                    clearIntervals();
                 }
-            }, 200);
-        }
-    }
 
-    function forward() {
-        clearInterval(backwardInterval);
-        backwardButton.classList.remove('active');
+                function backward() {
+                    clearInterval(forwardInterval);
+                    forwardButton.classList.remove('active');
 
-        if (forwardButton.classList.contains('active')) {
-            forwardButton.classList.remove('active');
-            clearInterval(forwardInterval);
-            video.play();
-        }
-        else {
-            forwardButton.classList.add('active');
-            video.pause();
-            forwardInterval = setInterval(() => {
-                if (video.currentTime >= (video.duration - 3)) {
-                    stop();
+                    if (backwardButton.classList.contains('active')) {
+                        backwardButton.classList.remove('active');
+                        clearInterval(backwardInterval);
+                        video.play();
+                    }
+                    else {
+                        backwardButton.classList.add('active');
+                        video.pause();
+                        backwardInterval = setInterval(() => {
+                            if (video.currentTime <= 3) {
+                                stop();
+                            }
+                            else {
+                                video.currentTime -= 3;
+                            }
+                        }, 200);
+                    }
                 }
-                else {
-                    video.currentTime += 3;
+
+                function forward() {
+                    clearInterval(backwardInterval);
+                    backwardButton.classList.remove('active');
+
+                    if (forwardButton.classList.contains('active')) {
+                        forwardButton.classList.remove('active');
+                        clearInterval(forwardInterval);
+                        video.play();
+                    }
+                    else {
+                        forwardButton.classList.add('active');
+                        video.pause();
+                        forwardInterval = setInterval(() => {
+                            if (video.currentTime >= (video.duration - 3)) {
+                                stop();
+                            }
+                            else {
+                                video.currentTime += 3;
+                            }
+                        }, 200);
+                    }
                 }
-            }, 200);
-        }
-    }
 
-    function getFormattedTime(time) {
-        const hours = Math.floor(time / 3600);
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time - minutes * 60);
+                function getFormattedTime(time) {
+                    time = (time && !isNaN (time) ? time : 0);
 
-        const formattedHours = (minutes < 10 ? '0' + hours : hours);
-        const formattedMinutes = (minutes < 10 ? '0' + minutes : minutes);
-        const formattedSeconds = (seconds < 10 ? '0' + seconds : seconds);
+                    const hours = Math.floor(time / 3600);
+                    const minutes = Math.floor(time / 60);
+                    const seconds = Math.floor(time - minutes * 60);
 
-        if (hours >= 1) {
-            return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
-        }
+                    const formattedHours = (minutes < 10 ? '0' + hours : hours);
+                    const formattedMinutes = (minutes < 10 ? '0' + minutes : minutes);
+                    const formattedSeconds = (seconds < 10 ? '0' + seconds : seconds);
 
-        return `${formattedMinutes}:${formattedSeconds}`;
-    }
+                    if (hours >= 1) {
+                        return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+                    }
 
-    function updateTime() {
+                    return `${formattedMinutes}:${formattedSeconds}`;
+                }
 
-        // minutes : seconds indicator
-        timerCurrent.textContent = getFormattedTime(video.currentTime);
+                function updateTime() {
 
-        // progress bar
-        const barLength = timerWrapper.clientWidth * (video.currentTime / video.duration);
-        timerBar.style.width = `${barLength}px`;
-    }
+                    // minutes : seconds indicator
+                    timerCurrent.textContent = getFormattedTime(video.currentTime);
 
-    function clearIntervals () {
-        backwardButton.classList.remove('active');
-        forwardButton.classList.remove('active');
-        clearInterval(backwardInterval);
-        clearInterval(forwardInterval);
-    }
+                    // progress bar
+                    const barLength = timerWrapper.clientWidth * (video.currentTime / video.duration);
+                    timerBar.style.width = `${barLength}px`;
+                }
 
-    function toggleFullScreen() {
-        if (document.fullscreenEnabled) {
-            if (!document.fullscreenElement) {
-                player.requestFullscreen();
-                video.style.width = video.style.height = '100%';
+                function clearIntervals () {
+                    backwardButton.classList.remove('active');
+                    forwardButton.classList.remove('active');
+                    clearInterval(backwardInterval);
+                    clearInterval(forwardInterval);
+                }
+
+                function toggleFullScreen() {
+                    if (document.fullscreenEnabled) {
+                        if (!document.fullscreenElement) {
+                            player.requestFullscreen();
+                            video.style.width = video.style.height = '100%';
+                        }
+                        else {
+                            if (document.exitFullscreen) {
+                                document.exitFullscreen();
+                            }
+                        }
+                    }
+                    else {
+                        alert(`You browser doesn't support Fullscreen or isn't enabled!`);
+                    }
+                }
+
+                function toggleMute() {
+                    video.muted = !video.muted;
+                    muteButton.setAttribute('title', video.muted ? 'unmute' : 'mute');
+                }
             }
-            else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
-            }
-        }
-        else {
-            alert(`You browser doesn't support Fullscreen or isn't enabled!`);
         }
     }
-
-    function toggleMute() {
-        video.muted = !video.muted;
-        muteButton.setAttribute('title', video.muted ? 'unmute' : 'mute');
-    }
-
-
 });

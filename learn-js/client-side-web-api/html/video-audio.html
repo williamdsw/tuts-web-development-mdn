@@ -7,29 +7,36 @@
         <title> Video and Audio API </title>
     </head>
     <body>
+        <header>
+            <h1> Video and Audio API </h1>
+        </header>
 
-        <div class="player">
-            <video controls>
-                <source type="video/mp4" src="../assets/videos/sintel-short.mp4">
-                <source type="video/webm" src="../assets/videos/sintel-short.webm">
-            </video>
-
-            <div class="controls">
-                <button class="play" data-icon="P" aria-label="play pause toggle" title="play"></button>
-                <button class="stop" data-icon="S" aria-label="stop" title="stop"></button>
-                <button class="mute" data-icon="Q" aria-label="mute" title="mute"></button>
-
-                <div class="timer">
-                    <div></div>
-                    <span class="current" aria-label="timer" title="current timer">00:00</span>
-                    <span class="duration" aria-label="duration" title="duration">00:00</span>
+        <main>
+            <article>
+                <div class="player">
+                    <video controls>
+                        <source type="video/mp4" src="../assets/videos/sintel-short.mp4">
+                        <source type="video/webm" src="../assets/videos/sintel-short.webm">
+                    </video>
+        
+                    <div class="controls">
+                        <button class="play" data-icon="P" aria-label="play pause toggle" title="play"></button>
+                        <button class="stop" data-icon="S" aria-label="stop" title="stop"></button>
+                        <button class="mute" data-icon="Q" aria-label="mute" title="mute"></button>
+        
+                        <div class="timer">
+                            <div></div>
+                            <span class="current" aria-label="timer" title="current timer">00:00</span>
+                            <span class="duration" aria-label="duration" title="duration">00:00</span>
+                        </div>
+        
+                        <button class="backward" data-icon="B" aria-label="backward" title="backward"></button>
+                        <button class="forward" data-icon="F" aria-label="fast forward" title="forward"></button>
+                        <button class="fullscreen" data-icon="b" aria-label="fullscreen" title="fullscreen"></button>
+                    </div>
                 </div>
-
-                <button class="backward" data-icon="B" aria-label="backward" title="backward"></button>
-                <button class="forward" data-icon="F" aria-label="fast forward" title="forward"></button>
-                <button class="fullscreen" data-icon="b" aria-label="fullscreen" title="fullscreen"></button>
-            </div>
-        </div>
+            </article>
+        </main>
         
         <script src="../js/video-audio.js"></script>
     </body>
