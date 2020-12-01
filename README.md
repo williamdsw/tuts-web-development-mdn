@@ -1,5 +1,10 @@
 # MDN - Web Development Tutorials
 
+## About
+
+Based on these tutorials: https://developer.mozilla.org/en-US/docs/Learn
+Live at https://williamdsw.github.io/tuts-web-development-mdn/
+
 ## Content
 
 ### HTML - Structuring the Web 
